@@ -8,8 +8,8 @@ interface IProps {
 const Content = ({ children }: IProps) => {
   return (
     <>
-      <div className=" px-12 w-full ">
-        <Navbar />
+      <Navbar />
+      <div className="px-16 w-full ">
         {children}
       </div>
       <Sidebar />
