@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <div className="flex px-16 flex-col md:flex-row items-center justify-between p-4 text-blue-600  font-bold">
+    <div className="flex px-16 flex-col md:flex-row items-center justify-between py-4 text-blue-600  font-bold">
       <div className="flex items-center justify-between w-full md:w-auto">
         <Image
           src={abdullah_al_noman_log}

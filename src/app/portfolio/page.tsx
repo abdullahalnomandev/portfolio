@@ -6,7 +6,7 @@ import Headline from "@/components/ui/Headline";
 const PortfolioPage = () => {
   return (
     <div>
-      <Headline title="Portfolio" />
+      <Headline title="Projects" />
       <div className="grid grid-cols-12 my-3">
         {portfolio.map(
             ({

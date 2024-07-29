@@ -27,67 +27,20 @@ const Banner = () => {
           </p>
           <div className="buttons flex gap-2 items-center">
             <Link href="/about">
-              <button className="font-sans px-4 py-2 border rounded-lg w-24 border-blue-700 bg-blue-600 transition text-white hover:text-blue-600 hover:bg-white scale-100 hover:scale-105 duration-300 animate-bounceIn">
-                About
+              <button className="font-sans px-2 py-2 border rounded-lg w-30 border-blue-700 bg-blue-600 transition text-white hover:text-blue-600 hover:bg-white scale-100 hover:scale-105 duration-300 animate-bounceIn">
+                About Me
               </button>
             </Link>
             <Link href="/contact">
-              <button className="font-sans px-4 py-2 border rounded-lg w-24 text-blue-600 border-blue-700 hover:bg-blue-600 transition hover:text-white scale-100 hover:scale-105 duration-300 animate-bounceIn delay-1s">
-                Contact
+              <button className="font-sans px-2  py-2 border rounded-lg w-30 text-blue-600 border-blue-700 hover:bg-blue-600 transition hover:text-white scale-100 hover:scale-105 duration-300 animate-bounceIn delay-1s">
+                Get In Touch
               </button>
             </Link>
           </div>
         </div>
         {/* Image  */}
         <div className="mt-3 md:mt-0 col-span-full sm:col-span-5 text-justify flex justify-start md:justify-end relative">
-          <style jsx>{`
-            @keyframes spin {
-              0% {
-                transform: rotate(0deg);
-              }
-              100% {
-                transform: rotate(360deg);
-              }
-            }
-            @keyframes fadeIn {
-              0% {
-                opacity: 0;
-              }
-              100% {
-                opacity: 1;
-              }
-            }
-            @keyframes bounceIn {
-              0% {
-                transform: scale(0.5);
-                opacity: 0;
-              }
-              100% {
-                transform: scale(1);
-                opacity: 1;
-              }
-            }
-            .animate-fadeIn {
-              animation: fadeIn 1s ease-in-out forwards;
-            }
-            .animate-bounceIn {
-              animation: bounceIn 1s ease-in-out forwards;
-            }
-            .delay-1s {
-              animation-delay: 1s;
-            }
-            .delay-2s {
-              animation-delay: 2s;
-            }
-          `}</style>
-          <div
-            className="absolute w-8 h-8 rounded-full border-2 border-blue-400"
-            style={{ animation: 'spin 4s linear infinite', top: '-10px', left: '-10px' }}
-          ></div>
-          <div
-            className="absolute w-8 h-8 rounded-full border-2 border-blue-400"
-            style={{ animation: 'spin 4s linear infinite reverse', bottom: '-10px', right: '-10px' }}
-          ></div>
+
           <div className="relative">
             <Image
               src={abdullah_al_noman}

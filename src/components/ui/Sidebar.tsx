@@ -5,7 +5,7 @@ import FaEmail from '@/assets/images/email.png'
 import Image from 'next/image';
 const Sidebar = () => {
     return (
-        <div className="mt-40 w-16 fixed bottom-0 left-0 px-4">
+        <div className="mt-40 w-14 fixed bottom-0 left-0">
             <ul className="flex flex-col items-center space-y-4 ">
                 <li className="text-white hover:text-blue-700 transition duration-300 ">
                     <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
