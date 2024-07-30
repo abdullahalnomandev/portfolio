@@ -53,6 +53,6 @@ export const projects = [
         "hasShortlist":false,
         "frontend_github_link":"https://demo.xyz",
         "backend_github_link":"https://demo.xyz",
-        "live_link":"https://example.xyz"
+        "live_link":"https://examples.xyz"
     }
 ]
