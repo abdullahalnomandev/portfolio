@@ -6,10 +6,11 @@ interface IProps {
   children: React.ReactNode;
 }
 const Content = ({ children }: IProps) => {
+
   return (
     <>
       <Navbar />
-      <div className=" px-16 w-full ">
+      <div className="px-16 w-full bg-[#f9f9f9] ">
         {children}
       </div>
       <Sidebar />

@@ -1,8 +1,10 @@
+import Headline from "@/components/ui/Headline";
 import React from "react";
 
 const BlogPage = () => {
   return (
     <div>
+        <Headline title="Some of My Articles" />
       <h1>This is Blog Page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,

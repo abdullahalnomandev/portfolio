@@ -16,7 +16,7 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: { item: IProps, hoverId?: 
 
     return (
         <div
-            className={`col-span-12 rounded md:col-span-6 lg:col-span-4 m-2 transition-transform duration-300 transform ${hoverId === id ? 'scale-105 shadow-lg' : 'shadow-md'}`}
+            className={`col-span-12 shadow-slate-300 shadow-lg rounded-md md:col-span-6 lg:col-span-4 m-2 transition-transform duration-300 transform ${hoverId === id ? 'scale-105 ' : ''}`}
             key={id}
             onMouseEnter={() => setHoverId?.(id as string)}
             onMouseLeave={() => setHoverId?.('')}
@@ -38,7 +38,7 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: { item: IProps, hoverId?: 
                 <div className="flex flex-wrap mb-2">
                     {technologies.map((technology: string, i: number) => (
                         <span
-                            className="bg-blue-500 text-[12px] py-1 px-2 text-white m-1 rounded-full font-normal hover:bg-blue-700 transition duration-300"
+                            className="text-[12px] py-1 px-2 text-primary-hover text-primary m-1 rounded-full font-normal duration-700 transition"
                             key={i}
                         >
                             {technology}

@@ -1,10 +1,22 @@
 import React from 'react';
+import footer_image from '@/assets/images/footer.png';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear(); // Dynamic year
 
     return (
-        <footer className="text-center bg-blue-400 py-6" aria-label="Footer">
+        <footer 
+            className="text-center h-[400px]" 
+            style={{ 
+                backgroundImage: `url(${footer_image.src})`, 
+                backgroundSize: "contain", 
+                backgroundPosition: "bottom center", // Positioned at the bottom
+                backgroundRepeat: 'no-repeat',
+                width: '100%',
+                opacity: 1.2, // Adjust opacit
+            }} 
+            aria-label="Footer"
+        >
             <p className="text-white font-semibold">Developed by Abdullah Al Noman</p>
             <p className="text-white">© {currentYear} All rights reserved.</p>
             <p className="text-white">Powered by Abdullah Al Noman</p>

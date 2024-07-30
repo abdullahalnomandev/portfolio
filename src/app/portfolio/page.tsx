@@ -1,5 +1,5 @@
 import Link from "next/link";
-import portfolio from "../../data/portfolio.json";
+import { projects } from "../../data/projects";
 import Image from "next/image";
 import noman from "@/assets/images/noman.jpeg";
 import Headline from "@/components/ui/Headline";
@@ -8,7 +8,7 @@ const PortfolioPage = () => {
     <div>
       <Headline title="Projects" />
       <div className="grid grid-cols-12 my-3">
-        {portfolio.map(
+        {projects.map(
             ({
               name,
               id,

@@ -1,0 +1,14 @@
+<svg id="Group_39_Copy_18" data-name="Group 39 Copy 18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="121" viewBox="0 0 120 121">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e8f3ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#cce4ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" y1="0.097" x2="0.5" y2="0.999" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#2b73b2"/>
+    </linearGradient>
+  </defs>
+  <ellipse id="Oval" cx="60" cy="60.5" rx="60" ry="60.5" opacity="0.355" fill="url(#linear-gradient)"/>
+  <ellipse id="Oval-2" data-name="Oval" cx="42" cy="42.5" rx="42" ry="42.5" transform="translate(29 28)" opacity="0.186" fill="url(#linear-gradient-2)"/>
+</svg>

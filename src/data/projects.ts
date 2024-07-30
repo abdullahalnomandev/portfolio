@@ -1,5 +1,4 @@
-
-[
+export const projects = [
     {
         "id":1,
         "name":"Hotel Bookings",
