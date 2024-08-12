@@ -27,7 +27,7 @@ const AboutPage = () => {
                         className="rounded-full shadow-lg"
                     />
                 </div>
-                <h1 className="text-4xl mb-2 font-bold text-primary">I'm Abdullah Al Noman</h1>
+                <h1 className="text-4xl mb-2 font-bold text-primary">I&rsquo;m Abdullah Al Noman</h1>
                 <p className="text-lg leading-8 mb-5 text-gray-600">
                     A self-motivated and enthusiastic web designer with a deep interest in JavaScript. Aiming to work in the software industry with cutting-edge web technologies in various local and global Software/IT companies in Bangladesh, and grow rapidly with increasing responsibilities.
                 </p>

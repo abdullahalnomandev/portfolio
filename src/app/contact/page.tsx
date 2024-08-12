@@ -14,7 +14,7 @@ const ContactPage = () => {
           />
         </div>
         <div className="details-container">
-          <h1>I'm Abdullah Al Noman</h1>
+          <h1>I&rsquo;m Abdullah Al Noman</h1>
           <p>
             A self-spurred and energetic web designer with a profound interest in JavaScript. To work in the Software business with current web innovations of various neighborhood and worldwide Software/IT offices of Bangladesh and develop quickly with expanding duties.
           </p>
