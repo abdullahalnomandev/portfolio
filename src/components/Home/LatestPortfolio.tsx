@@ -1,32 +1,40 @@
-"use client"
-import Link from "next/link";
-import Headline from "../ui/Headline";
-import { useState } from "react";
-import PortFolioCard from "../ui/PortFolioCard";
+"use client";
+
 import { projects } from "@/data/projects";
+import Link from "next/link";
+import { useState } from "react";
+import Headline from "../ui/Headline";
+import PortFolioCard from "../ui/PortFolioCard";
+
 const LatestPortfolio = () => {
-  const [hoverId, setHoverId] = useState<string | any>("")
+  const [hoverId, setHoverId] = useState<string>("");
 
   return (
-    <div>
-      <Headline title="My Latest Projects" />
-      <div className="grid grid-cols-12 my-3">
-        {projects.filter(({ hasShortlist }) => hasShortlist).map((item) => (
-        <PortFolioCard key={item.id} item={{ ...item, image_url: item.image_url || '' }} 
-         hoverId={hoverId}
-         setHoverId={setHoverId}
-        />
-        ))}
+    <section className='py-12 '>
+      <Headline title='My Latest Projects' />
+
+      <div className='grid grid-cols-12 gap-6 my-6'>
+        {projects
+          .filter(({ hasShortlist }) => hasShortlist)
+          .map((item) => (
+            <PortFolioCard
+              key={item.id}
+              item={{ ...item, image_url: item.image_url || "" }}
+              hoverId={hoverId}
+              setHoverId={setHoverId}
+            />
+          ))}
       </div>
-      <Link
-        href="/portfolio"
-        className="text-center border border-blue-400 w-36 m-auto py-1 rounded-full block "
-      >
-        See More
-      </Link>
-    </div>
+
+      <div className='text-center mt-8'>
+        <Link
+          href='/portfolio'
+          className='inline-block border border-blue-500 text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-blue-500 hover:text-white transition-colors duration-300'>
+          See More
+        </Link>
+      </div>
+    </section>
   );
 };
 
 export default LatestPortfolio;
-

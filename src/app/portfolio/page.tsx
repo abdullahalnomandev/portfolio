@@ -1,67 +1,28 @@
-import Link from "next/link";
-import { projects } from "../../data/projects";
-import Image from "next/image";
-import noman from "@/assets/images/noman.jpeg";
+"use client";
+
 import Headline from "@/components/ui/Headline";
+import PortFolioCard from "@/components/ui/PortFolioCard";
+import { projects } from "@/data/projects";
+import { useState } from "react";
+
 const PortfolioPage = () => {
+  const [hoverId, setHoverId] = useState<string>("");
+
   return (
-    <div>
-      <Headline title="Projects" />
-      <div className="grid grid-cols-12 my-3">
-        {projects.map(
-            ({
-              name,
-              id,
-              frontend_github_link,
-              description,
-              image_url,
-              technologies,
-            }) => (
-              <div
-                className="col-span-12  lg:col-span-6 xl:col-span-4 my-2 mr-2 last:mr-0  "
-                key={id}
-              >
-                <div className="border p-1 rounded-md shadow">
-                  <Image
-                    src={image_url || noman}
-                    alt={name}
-                    className=" object-cover w-full h-64"
-                  />
-                  <Link
-                    className="text-blue-700 font-medium hover:underline"
-                    target="_blank"
-                    href={frontend_github_link}
-                  >
-                    {name}
-                  </Link>
-                  <p>Technologies:</p>
-                  {technologies.map((technology, i) => (
-                    <span
-                      className="bg-blue-500 ml-0 text-[13px] py-[2.5px] px-[5px] text-white m-1 rounded-full font-normal 
-                     hover:bg-blue-800 transition duration-500
-                    "
-                      key={i}
-                    >
-                      {technology}
-                    </span>
-                  ))}
-                  <p className="text-gray-400">{description}</p>
-                  live:
-                  <Link href={frontend_github_link} target="_blank">
-                    Front-end
-                  </Link>
-                </div>
-              </div>
-            )
-          )}
+    <section className='py-12'>
+      <Headline title='All Projects' />
+
+      <div className='grid grid-cols-12 gap-6 my-6'>
+        {projects.map((item) => (
+          <PortFolioCard
+            key={item.id}
+            item={{ ...item, image_url: item.image_url || "" }}
+            hoverId={hoverId}
+            setHoverId={setHoverId}
+          />
+        ))}
       </div>
-      <Link
-        href="/portfolio"
-        className="text-center border border-blue-400 w-36 m-auto py-1 rounded-full block "
-      >
-        See More
-      </Link>
-    </div>
+    </section>
   );
 };
 

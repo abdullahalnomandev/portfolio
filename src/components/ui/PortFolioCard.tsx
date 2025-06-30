@@ -1,74 +1,104 @@
-import { IPortfolio } from '@/types';
-import Link from 'next/link';
-import React from 'react';
-import Image from 'next/image';
-import noman from '@/assets/images/noman.jpeg';
-import hotel from '@/assets/images/hotel2.png'
-import { FaGithub, FaLink } from 'react-icons/fa';
+import { IPortfolio } from "@/types";
+import Image from "next/image";
+import Link from "next/link";
+import { FaGithub, FaLink } from "react-icons/fa";
 
 interface IProps extends IPortfolio {
-    hoverId?: string;
-    setHoverId?: (id: string) => void;
+  hoverId?: string;
+  setHoverId?: (id: string) => void;
 }
 
-const PortFolioCard = ({ item, hoverId, setHoverId }: { item: IProps, hoverId?: string, setHoverId?: (id: string) => void }) => {
-    const { name, id, image_url, frontend_github_link, backend_github_link, live_link, technologies, description } = item;
+const PortFolioCard = ({
+  item,
+  hoverId,
+  setHoverId,
+}: {
+  item: IProps;
+  hoverId?: string;
+  setHoverId?: (id: string) => void;
+}) => {
+  const {
+    name,
+    id,
+    image_url,
+    frontend_github_link,
+    backend_github_link,
+    live_link,
+    technologies,
+    description,
+  } = item;
 
-    return (
-        <div
-            className={`col-span-12 shadow-slate-300 shadow-lg rounded-md md:col-span-6 lg:col-span-4 m-2 transition-transform duration-300 transform ${hoverId === id ? 'scale-105 ' : ''}`}
-            key={id}
-            onMouseEnter={() => setHoverId?.(id as string)}
-            onMouseLeave={() => setHoverId?.('')}
-        >
-            <div className="p-4 rounded-lg bg-white overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <Image
-                    src={hotel || noman}
-                    alt={name}
-                    className={`object-cover w-full rounded-md transition-transform duration-300 ${hoverId === id ? 'scale-105' : ''}`}
-                />
-                <Link
-                    className={`text-blue-600 font-semibold block mt-2 transition duration-300 ${hoverId === id ? 'underline' : ''}`}
-                    target="_blank"
-                    href={frontend_github_link}
-                >
-                    {name}
-                </Link>
-                <p className="text-sm text-gray-600">Technologies:</p>
-                <div className="flex flex-wrap mb-2">
-                    {technologies.map((technology: string, i: number) => (
-                        <span
-                            className="text-[12px] py-1 px-2 text-primary-hover text-primary m-1 rounded-full font-normal duration-700 transition"
-                            key={i}
-                        >
-                            {technology}
-                        </span>
-                    ))}
-                </div>
-                <p className="text-gray-500 text-sm mb-4">{description}</p>
-                <div className="flex items-center space-x-4">
-                    {live_link && (
-                        <Link href={frontend_github_link} target="_blank" className={`text-blue-600 flex items-center hover:text-blue-800 transition  ${hoverId === id ? "underline" : ""}`}>
-                            <FaLink className="mr-1" />
-                            Live Site
-                        </Link>
-                    )}
-                    {frontend_github_link && (
-                        <Link href={frontend_github_link} target="_blank" className={`text-blue-600 flex items-center hover:text-blue-800 transition  ${hoverId === id ? "underline" : ""}`}>
-                            <FaGithub className="mr-1 text-black" />
-                            Frontend
-                        </Link>
-                    )}
-                    {backend_github_link && (
-                        <Link href={frontend_github_link} target="_blank" className={`text-blue-600 flex items-center hover:text-blue-800 transition  ${hoverId === id ? "underline" : ""}`}>
-                            <FaGithub className="mr-1 text-black" />
-                            Backend
-                        </Link>
-                    )}
-                </div>
-            </div>
+  return (
+    <div
+      className={`col-span-12 md:col-span-6 lg:col-span-4 transition-transform duration-300 ${
+        hoverId === id ? "scale-[1.03]" : ""
+      }`}
+      onMouseEnter={() => setHoverId?.(id)}
+      onMouseLeave={() => setHoverId?.("")}>
+      <div className='h-full flex flex-col bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300'>
+        {/* Image */}
+        <div className='h-48 relative'>
+          <Image
+            src={image_url || "/default.jpg"}
+            alt={name}
+            fill
+            className='object-cover rounded-t-xl'
+          />
         </div>
-    );
+
+        {/* Content */}
+        <div className='p-5 flex flex-col flex-1 space-y-3'>
+          <h3 className='text-xl font-bold text-gray-900'>{name}</h3>
+
+          <p className='text-sm text-gray-600 leading-relaxed line-clamp-3'>
+            {description}
+          </p>
+
+          {/* Technologies with fixed height space */}
+          <div className='flex flex-wrap gap-2 min-h-[60px] items-start'>
+            {technologies.map((tech, i) => (
+              <span
+                key={i}
+                className='inline-block bg-pink-100 text-pink-600 text-xs font-medium px-3 py-1 rounded-full'>
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {/* Push footer to bottom */}
+          <div className='mt-auto pt-3 flex flex-wrap gap-4'>
+            {live_link && (
+              <Link
+                href={live_link}
+                target='_blank'
+                className='text-blue-600 hover:text-blue-800 text-sm inline-flex items-center gap-1'>
+                <FaLink className='text-base' />
+                Live Site
+              </Link>
+            )}
+            {frontend_github_link && (
+              <Link
+                href={frontend_github_link}
+                target='_blank'
+                className='text-gray-800 hover:text-black text-sm inline-flex items-center gap-1'>
+                <FaGithub className='text-base' />
+                Frontend
+              </Link>
+            )}
+            {backend_github_link && (
+              <Link
+                href={backend_github_link}
+                target='_blank'
+                className='text-gray-800 hover:text-black text-sm inline-flex items-center gap-1'>
+                <FaGithub className='text-base' />
+                Backend
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default PortFolioCard;
