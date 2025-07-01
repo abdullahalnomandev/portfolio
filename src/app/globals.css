@@ -8,7 +8,22 @@
   }
 
   .text-primary {
-    @apply text-white bg-[#6047ec] ;
+    @apply text-white bg-[#6047ec];
+  }
+}
+
+@layer utilities {
+  .animate-shimmer {
+    animation: shimmer 1.6s infinite linear;
+    background-size: 200% 100%;
   }
 
+  @keyframes shimmer {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
 }

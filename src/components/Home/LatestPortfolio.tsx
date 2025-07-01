@@ -30,7 +30,7 @@ const LatestPortfolio = () => {
         <Link
           href='/portfolio'
           className='inline-block border border-blue-500 text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-blue-500 hover:text-white transition-colors duration-300'>
-          See More
+          See All Projects
         </Link>
       </div>
     </section>

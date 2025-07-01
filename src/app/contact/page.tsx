@@ -22,8 +22,8 @@ const ContactPage = () => {
   };
 
   return (
-    <section className='bg-gradient-to-br from-white via-gray-50 to-blue-50 text-gray-900 py-16 px-4 sm:px-6 md:px-12'>
-      <div className='w-full max-w-2xl mx-auto bg-white border border-gray-200 p-6 sm:p-10 rounded-3xl shadow-2xl space-y-10'>
+    <section className=' text-gray-900 py-16 px-4 sm:px-6 md:px-12'>
+      <div className='w-full max-w-2xl mx-auto  border border-gray-200 p-6 sm:p-10 rounded-3xl shadow-2xl space-y-10'>
         <div className='text-center space-y-3'>
           <h2 className='text-3xl sm:text-4xl font-extrabold tracking-tight'>
             Let’s Connect

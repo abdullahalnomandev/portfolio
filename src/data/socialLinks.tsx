@@ -1,12 +1,7 @@
 import FaEmail from "@/assets/images/email.png";
 import Image from "next/image";
-import {
-  FaFacebook,
-  FaGithub,
-  FaLinkedin,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
+import { BsWhatsapp } from "react-icons/bs";
+import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const socialLinks = () => {
   return [
@@ -14,7 +9,7 @@ const socialLinks = () => {
       id: 1,
       href: "https://www.linkedin.com/in/abdullahalnoman1",
       icon: FaLinkedin,
-      textColor: "text-blue-700",
+      textColor: "text-blue-600",
     },
     {
       id: 2,
@@ -25,14 +20,16 @@ const socialLinks = () => {
     {
       id: 3,
       href: "mailto:abdullahalnoman1512@gmail.com",
-      icon: () => <Image alt='email' src={FaEmail} width={22} height={20} />,
+      icon: () => {
+        return <Image alt='email' src={FaEmail} width={22} height={20} />;
+      },
       textColor: "text-blue-500",
     },
     {
       id: 4,
       href: "https://wa.me/+8801706960271",
-      icon: FaWhatsapp,
-      textColor: "text-green-500",
+      icon: BsWhatsapp,
+      textColor: "!text-green-500",
     },
     {
       id: 5,

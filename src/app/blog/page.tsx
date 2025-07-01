@@ -1,60 +1,8 @@
 "use client";
-import imageBlog from "@/assets/images/How_To_Start_A_Blog_-_article_image.webp";
+import { blogPosts } from "@/data/blogs";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-const blogPosts = [
-  {
-    id: 1,
-    title: "Mastering React Performance with Hooks",
-    excerpt:
-      "Optimize your React app using hooks like useMemo and useCallback. Discover real-world patterns and performance tuning strategies.",
-    slug: "/blog/react-performance-hooks",
-    date: "2025-06-25",
-    author: "Abdullah Al Noman",
-    image: imageBlog,
-  },
-  {
-    id: 2,
-    title: "Zustand vs Redux: Which State Manager to Choose?",
-    excerpt:
-      "Explore the strengths and trade-offs between Zustand and Redux — and when each is a better fit in your React architecture.",
-    slug: "/blog/zustand-vs-redux",
-    date: "2025-06-10",
-    author: "Abdullah Al Noman",
-    image: imageBlog,
-  },
-  {
-    id: 3,
-    title: "What’s New in Next.js 14",
-    excerpt:
-      "Next.js 14 introduces Server Actions, Partial Rendering, and a new cache layer. Get up to speed with the latest features.",
-    slug: "/blog/nextjs-14-new-features",
-    date: "2025-05-28",
-    author: "Abdullah Al Noman",
-    image: imageBlog,
-  },
-  {
-    id: 4,
-    title: "React Testing Simplified with Vitest",
-    excerpt:
-      "Speed up your test runs and simplify setup using Vitest. Explore modern testing strategies with minimal config.",
-    slug: "/blog/react-vitest-testing",
-    date: "2025-06-05",
-    author: "Abdullah Al Noman",
-    image: imageBlog,
-  },
-  {
-    id: 5,
-    title: "Build a Design System with Tailwind CSS",
-    excerpt:
-      "Learn how to organize scalable, reusable UI patterns with Tailwind CSS and component-driven development.",
-    slug: "/blog/tailwind-design-system",
-    date: "2025-05-30",
-    author: "Abdullah Al Noman",
-    image: imageBlog,
-  },
-];
 
 const BlogPage = () => {
   return (
@@ -84,7 +32,7 @@ const BlogPage = () => {
         />
       </Head>
 
-      <section className='bg-[#f9fafb] px-4 md:px-8 py-16'>
+      <section className=' py-16'>
         <div className='max-w-7xl mx-auto'>
           {/* Header */}
           <div className='text-center mb-12 max-w-3xl mx-auto'>
@@ -99,7 +47,7 @@ const BlogPage = () => {
           </div>
 
           {/* Blog Grid */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
             {blogPosts.map((post) => (
               <article
                 key={post.id}
@@ -141,6 +89,7 @@ const BlogPage = () => {
                   <div className='mt-6'>
                     <Link
                       href={post.slug}
+                      target='_blank'
                       className='text-blue-600 font-medium text-sm hover:underline transition-colors'>
                       Read full article →
                     </Link>

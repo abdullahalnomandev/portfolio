@@ -14,7 +14,7 @@ const Banner = () => {
         backgroundImage: `url(${banner.src})`,
         backgroundPosition: "calc(100% - 90%) top",
       }}>
-      <div className='max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-12 items-center gap-8'>
+      <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 items-center gap-8'>
         {/* Left Content */}
         <div className='md:col-span-7 space-y-6'>
           <h2 className='text-2xl font-bold font-[Bangla393] text-gray-800 tracking-wide'>
