@@ -9,14 +9,14 @@ const PortfolioPage = () => {
   const [hoverId, setHoverId] = useState<string>("");
 
   return (
-    <section className='py-12'>
-      <Headline title='All Projects' />
+    <section className="py-12">
+      <Headline title="All Projects" />
 
-      <div className='grid grid-cols-12 gap-6 my-6'>
-        {projects.map((item) => (
+      <div className="grid grid-cols-12 gap-6 my-6">
+        {projects.map(({ id, image_url }) => (
           <PortFolioCard
-            key={item.id}
-            item={{ ...item, image_url: item.image_url || "" }}
+            key={id}
+            item={{ id, image_url }}
             hoverId={hoverId}
             setHoverId={setHoverId}
           />
