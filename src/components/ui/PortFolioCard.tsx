@@ -3,21 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLink } from "react-icons/fa";
 
-interface IProps extends IPortfolio {
+interface PortFolioCardProps {
+  item: IPortfolio;
   hoverId?: string;
   setHoverId?: (id: string) => void;
-  item: IPortfolio;
 }
 
-const PortFolioCard = ({
-  item,
-  hoverId,
-  setHoverId,
-}: {
-  item: IProps;
-  hoverId?: string;
-  setHoverId?: (id: string) => void;
-}) => {
+const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
   const {
     name,
     id,
