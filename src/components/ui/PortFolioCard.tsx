@@ -5,8 +5,8 @@ import { FaGithub, FaLink } from "react-icons/fa";
 
 interface PortFolioCardProps {
   item: IPortfolio;
-  hoverId?: string;
-  setHoverId?: (id: string) => void;
+  hoverId?: number | null;
+  setHoverId?: (id: number | null) => void;
 }
 
 const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
@@ -27,7 +27,7 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
         hoverId === id ? "scale-[1.03]" : ""
       }`}
       onMouseEnter={() => setHoverId?.(id)}
-      onMouseLeave={() => setHoverId?.("")}
+      onMouseLeave={() => setHoverId?.(null)}
     >
       <div className="h-full flex flex-col bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
         {/* Image */}
@@ -48,7 +48,7 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
             {description}
           </p>
 
-          {/* Technologies with fixed height space */}
+          {/* Technologies */}
           <div className="flex flex-wrap gap-2 min-h-[60px] items-start">
             {technologies.map((tech, i) => (
               <span
@@ -60,7 +60,7 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
             ))}
           </div>
 
-          {/* Push footer to bottom */}
+          {/* Footer */}
           <div className="mt-auto pt-3 flex flex-wrap gap-4">
             {live_link && (
               <Link
