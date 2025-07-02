@@ -13,10 +13,10 @@ const PortfolioPage = () => {
       <Headline title="All Projects" />
 
       <div className="grid grid-cols-12 gap-6 my-6">
-        {projects.map(({ id, image_url }) => (
+        {projects.map((item) => (
           <PortFolioCard
-            key={id}
-            item={{ id, image_url }}
+            key={item.id}
+            item={item} // ✅ pass full object
             hoverId={hoverId}
             setHoverId={setHoverId}
           />
