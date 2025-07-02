@@ -44,6 +44,7 @@ const Navbar = () => {
     return pathname === href;
   };
 
+  const downloadLink = `https://drive.google.com/uc?export=download&id=14spRvCqXF3NNMcDe4YODmGJRM3pX_mnw`;
   return (
     <header
       className={`transition-all duration-300 ${
@@ -124,13 +125,13 @@ const Navbar = () => {
             </div>
 
             {/* Resume Button */}
-            <Link
-              href="/resume.pdf"
+            <button
+              onClick={() => window.open(downloadLink)}
               className="relative inline-block overflow-hidden rounded border border-pink-500 px-6 py-2 text-pink-500 transition-all duration-300 group hover:text-white"
             >
               <span className="relative z-10">Resume</span>
               <div className="absolute inset-0 z-0 scale-x-0 bg-gradient-to-r from-pink-500 to-rose-500 transition-transform duration-300 group-hover:scale-x-100 origin-left" />
-            </Link>
+            </button>
           </div>
         </div>
       </nav>
