@@ -6,7 +6,7 @@ import { projects } from "@/data/projects";
 import { useState } from "react";
 
 const PortfolioPage = () => {
-  const [hoverId, setHoverId] = useState<string>("");
+  const [hoverId, setHoverId] = useState<number | null>(null);
 
   return (
     <section className="py-12">
@@ -16,7 +16,7 @@ const PortfolioPage = () => {
         {projects.map((item) => (
           <PortFolioCard
             key={item.id}
-            item={item} // ✅ pass full object
+            item={item}
             hoverId={hoverId}
             setHoverId={setHoverId}
           />
