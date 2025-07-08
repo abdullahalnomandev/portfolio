@@ -25,6 +25,8 @@ const socialLinks = () => {
       },
       textColor: "text-blue-500",
     },
+    // <Icon className="text-green-600" size={25} />
+
     {
       id: 4,
       href: "https://wa.me/+8801706960271",
