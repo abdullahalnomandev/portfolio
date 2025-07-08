@@ -1,4 +1,3 @@
-"use client";
 import Banner from "@/components/Home/Banner";
 import GetInTouch from "@/components/Home/GetInTouch";
 import LatestPortfolio from "@/components/Home/LatestPortfolio";

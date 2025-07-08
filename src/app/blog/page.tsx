@@ -35,7 +35,9 @@ const BlogPage = () => {
       <section className=' py-16'>
         <div className='max-w-7xl mx-auto'>
           {/* Header */}
-          <div className='text-center mb-12 max-w-3xl mx-auto'>
+          <div
+            className='text-center mb-12 max-w-3xl mx-auto'
+            data-aos='fade-down'>
             <h1 className='text-4xl sm:text-5xl font-extrabold text-gray-900'>
               Insights, Tutorials & Engineering Notes
             </h1>
@@ -60,6 +62,8 @@ const BlogPage = () => {
                     fill
                     className='object-cover transition-transform duration-300 group-hover:scale-105'
                     sizes='(max-width: 768px) 100vw, 33vw'
+                    data-aos='flip-left'
+                    data-aos-duration='1000'
                   />
                 </div>
 

@@ -41,7 +41,7 @@ const Banner = () => {
             />
           </div>
 
-          <p className='text-gray-600 text-lg leading-relaxed max-w-2xl'>
+          <p className='text-gray-600 text-lg leading-relaxed max-w-2xl dark:text-[red]'>
             A self-spurred and energetic web designer with a profound interest
             in JavaScript. To work in the Software industry with modern web
             technologies and grow quickly with increasing responsibilities.

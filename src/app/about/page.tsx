@@ -1,20 +1,12 @@
 "use client";
 import noman from "@/assets/images/Abdullah_Al_Noman.jpg";
+import { downloadLink } from "@/constants";
 import Image from "next/image";
 import { useState } from "react";
 import { FiDownload } from "react-icons/fi";
 
 const AboutPage = () => {
   const [loading, setLoading] = useState(false);
-
-  const handleDownloadClick = () => {
-    setLoading(true);
-    setTimeout(() => {
-      window.location.href =
-        "https://drive.google.com/uc?export=download&id=1w3HHHWQdlnVeOcNjlNOYjBhByS00qhmD";
-      setLoading(false);
-    }, 150);
-  };
 
   // Skill data
   const skillSections = [
@@ -59,7 +51,9 @@ const AboutPage = () => {
     <section className=' min-h-screen px-8 py-16 md:px-20 md:py-24 font-sans text-gray-900'>
       <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start'>
         {/* Left side */}
-        <div className='space-y-8 text-center md:text-left'>
+        <div
+          className='space-y-8 text-center md:text-left'
+          data-aos='fade-right'>
           <div className='relative w-64 h-64 mx-auto md:mx-0 rounded-xl overflow-hidden shadow-lg'>
             <Image
               src={noman}
@@ -81,7 +75,7 @@ const AboutPage = () => {
             offices of Bangladesh and develop quickly with expanding duties.
           </p>
           <button
-            onClick={handleDownloadClick}
+            onClick={() => window.open(downloadLink)}
             disabled={loading}
             className='btn-primary flex items-center gap-2 disabled:cursor-not-allowed'
             aria-label='Download CV'>
@@ -91,7 +85,7 @@ const AboutPage = () => {
         </div>
 
         {/* Right side */}
-        <div className='space-y-10'>
+        <div className='space-y-10' data-aos='fade-left'>
           {skillSections.map(({ title, skills }) => (
             <section key={title}>
               <h2 className='text-pink-500 font-bold text-xl md:text-2xl inline-block border-b-2 border-blue-500 mb-6'>

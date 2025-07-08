@@ -1,7 +1,7 @@
+import Content from "@/components/content";
+import Providers from "@/lib/Provider";
 import type { Metadata } from "next";
 import "./globals.css";
-import Content from "@/components/content";
-
 
 export const metadata: Metadata = {
   title: "Abdullah Al Noman (Contact)",
@@ -14,10 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body >
-        <Content>{children}</Content>
-      </body>
-    </html>
+    <Providers>
+      <html lang='en'>
+        <body>
+          <Content>{children}</Content>
+        </body>
+      </html>
+    </Providers>
   );
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const GetInTouch = () => {
   return (
-    <section className='max-w-3xl mx-auto p-8  text-center'>
+    <section className='max-w-3xl mx-auto p-8  text-center' data-aos='fade-up'>
       <h2 className='text-3xl font-bold text-gray-900 mb-4'>Get In Touch</h2>
       <p className='text-gray-700 mb-8 leading-relaxed'>
         I&apos;d like to hear from you. Regardless of whether you suffer a heart

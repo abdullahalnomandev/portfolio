@@ -10,10 +10,10 @@ const LatestPortfolio = () => {
   const [hoverId, setHoverId] = useState<number | null>(null);
 
   return (
-    <section className="py-12 ">
-      <Headline title="My Latest Projects" />
+    <section className='py-12 '>
+      <Headline title='My Latest Projects' />
 
-      <div className="grid grid-cols-12 gap-6 my-6">
+      <div className='grid grid-cols-12 gap-6 my-6'>
         {projects
           .filter(({ hasShortlist }) => hasShortlist)
           .map((item) => (
@@ -26,11 +26,10 @@ const LatestPortfolio = () => {
           ))}
       </div>
 
-      <div className="text-center mt-8">
+      <div className='text-center mt-8'>
         <Link
-          href="/portfolio"
-          className="inline-block border border-blue-500 text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-blue-500 hover:text-white transition-colors duration-300"
-        >
+          href='/projects'
+          className='inline-block border border-blue-500 text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-blue-500 hover:text-white transition-colors duration-300'>
           See All Projects
         </Link>
       </div>

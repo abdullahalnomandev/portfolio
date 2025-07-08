@@ -9,7 +9,9 @@ const Content = ({ children }: IProps) => {
   return (
     <div className='mx-auto '>
       <Navbar />
-      <div className='sm:px-16 px-4 w-full bg-[#f4f6ff]'>{children}</div>
+      <div className='sm:px-16 px-4 w-full bg-[#f4f6ff] dark:bg-black dark:text-white'>
+        {children}
+      </div>
       <Sidebar />
       <Footer />
     </div>
