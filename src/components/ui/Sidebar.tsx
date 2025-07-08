@@ -8,7 +8,10 @@ const Sidebar = () => {
         {socialLinks().map(({ id, href, textColor, icon: Icon }) => (
           <li key={id} className='transition duration-300 '>
             <Link href={href} target='_blank' rel='noopener noreferrer'>
-              <Icon className={textColor} size={25} />
+              <Icon
+                className={`text-${textColor}-600 transition hover:scale-125 duration-300 ease-in-out`}
+                size={25}
+              />
             </Link>
           </li>
         ))}
