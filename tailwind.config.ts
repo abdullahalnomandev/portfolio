@@ -6,7 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "dark", // Enable dark mode based on the presence of a 'dark' class
+  darkMode: "class", // Enable dark mode based on the presence of a 'dark' class
   theme: {
     extend: {
       backgroundImage: {
