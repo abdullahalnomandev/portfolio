@@ -21,7 +21,7 @@ const socialLinks = () => {
       id: 3,
       href: "mailto:abdullahalnoman1512@gmail.com",
       icon: () => {
-        return <Image alt="email" src={FaEmail} width={22} height={20} />;
+        return <Image alt='email' src={FaEmail} width={22} height={20} />;
       },
       textColor: "text-blue-500",
     },
@@ -29,7 +29,7 @@ const socialLinks = () => {
       id: 4,
       href: "https://wa.me/+8801706960271",
       icon: BsWhatsapp,
-      textColor: "text-green-500",
+      textColor: "text-green-600",
     },
     {
       id: 5,
