@@ -19,17 +19,38 @@ const ProjectPage = ({ params }: { params: { projectId: string } }) => {
     if (!project) {
       throw new Error("Project not found");
     }
-    return Promise.resolve(project);
+    // Ensure images property exists with default empty array
+    return Promise.resolve({
+      ...project,
+      images: project.images || [],
+    });
   };
 
-  const project = getProject(projectId); // ✅ async/await used
+  // Use state to handle async data
+  const [project, setProject] = React.useState<IPortfolio | null>(null);
+  const [error, setError] = React.useState<string | null>(null);
+
+  // Fetch project data on component mount
+  React.useEffect(() => {
+    const fetchProject = async () => {
+      try {
+        const data = await getProject(projectId);
+        setProject(data);
+      } catch (err) {
+        setError((err as Error).message);
+      }
+    };
+    fetchProject();
+  }, [projectId]);
+
+  if (error) {
+    return (
+      <div className='p-10 text-center text-red-500 font-semibold'>{error}</div>
+    );
+  }
 
   if (!project) {
-    return (
-      <div className='p-10 text-center text-red-500 font-semibold'>
-        Project not found.
-      </div>
-    );
+    return <div className='p-10 text-center'>Loading...</div>;
   }
 
   return (
