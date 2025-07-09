@@ -106,9 +106,6 @@ const ProjectPage = ({ params }: { params: { projectId: string } }) => {
             <h1 className='text-3xl font-bold text-gray-900 mb-1'>
               {project.name}
             </h1>
-            <p className='text-base text-gray-600'>
-              {project.short_description || "Project Details"}
-            </p>
           </div>
 
           <div className='text-gray-700 text-base leading-relaxed'>
