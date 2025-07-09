@@ -13,9 +13,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const ProjectPage = ({ params }: { params: { projectId: string } }) => {
   const projectId = params.projectId;
-  const getProject = (projectId: string): Promise<IPortfolio> => {
+  const getProject = async (projectId: string): Promise<IPortfolio> => {
     const id = parseInt(projectId);
-    return projects?.find((project) => project.id === id);
+    const project = projects?.find((project) => project.id === id);
+    if (!project) {
+      throw new Error("Project not found");
+    }
+    return Promise.resolve(project);
   };
 
   const project = getProject(projectId); // ✅ async/await used
