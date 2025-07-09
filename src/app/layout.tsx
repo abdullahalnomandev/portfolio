@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Abdullah Al Noman (Contact)",
+  title: "Abdullah Al Noman ",
   description: "A full-stack web developer",
 };
 

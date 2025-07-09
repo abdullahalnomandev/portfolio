@@ -9,7 +9,7 @@ import Typewriter from "typewriter-effect";
 const Banner = () => {
   return (
     <section
-      className='relative z-10 bg-no-repeat bg-top bg-contain w-full sm:py-12'
+      className='relative  bg-no-repeat bg-top bg-contain w-full sm:py-12'
       style={{
         backgroundImage: `url(${banner.src})`,
         backgroundPosition: "calc(100% - 90%) top",
@@ -55,7 +55,7 @@ const Banner = () => {
             </Link>
             <Link href='/contact'>
               <button className='relative overflow-hidden btn-secondary border bg-transparent p-2.5 px-6 rounded text-black text-xl transition-all duration-300 ease-in-out hover:text-white border-[#ff35b4] group'>
-                <span className='relative z-10'>Get In Touch</span>
+                <span className='relative '>Get In Touch</span>
                 <div className='absolute inset-0 bg-gradient-to-r from-[#ff35b4] to-[#ff193f] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left'></div>
               </button>
             </Link>
@@ -83,7 +83,7 @@ const Banner = () => {
             </div>
 
             {/* Enhanced backdrop glow */}
-            <div className='absolute -inset-2 bg-gradient-to-r from-[#6047ec] to-[#ff35b4] rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-all duration-300 -z-10'></div>
+            <div className='absolute -inset-2 bg-gradient-to-r from-[#6047ec] to-[#ff35b4] rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-all duration-300 '></div>
           </div>
         </div>
       </div>
