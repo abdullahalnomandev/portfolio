@@ -73,7 +73,7 @@ const ProjectPage = ({ params }: { params: { projectId: string } }) => {
               style={{ aspectRatio: "16 / 9" }} // Maintain aspect ratio
               fadeEffect={{ crossFade: true }}
               effect='fade'>
-              {project.images.map((url, index) => (
+              {(project.images ?? []).map((url, index) => (
                 <SwiperSlide key={index}>
                   <div className='relative w-full h-full'>
                     {index === 0 ? (
