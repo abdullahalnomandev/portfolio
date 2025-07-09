@@ -1,8 +1,3 @@
-import doctorsHome from "@/assets/projects-images/doctors.jpg";
-import dreamShopHome from "@/assets/projects-images/dream-shop.png";
-import fixomizHome from "@/assets/projects-images/fixomiz-home.jpg";
-import hotelHome from "@/assets/projects-images/hotel-home.jpg";
-import restoreHome from "@/assets/projects-images/restore.jpg";
 export const projects = [
   {
     id: 1,
@@ -27,7 +22,17 @@ export const projects = [
     backend_github_link:
       "https://github.com/abdullahalnomandev/mr-chemist-doctors-backend",
     live_link: "https://mr-chemist-doctors.vercel.app/",
-    image_url: doctorsHome,
+    image_url:
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752050318/doctors_fqgtyz.jpg",
+    images: [
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053540/serviceImages/Screenshot_34_yplxzc.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053538/serviceImages/Screenshot_35_cedkum.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053537/serviceImages/Screenshot_36_mghifc.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053537/serviceImages/Screenshot_37_jqevdn.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051079/serviceImages/Screenshot_26_mz3bif.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051076/serviceImages/Screenshot_27_ibgj3c.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051076/serviceImages/Screenshot_28_pswfb5.jpg",
+    ],
   },
   {
     id: 2,
@@ -46,12 +51,19 @@ export const projects = [
     ],
     lunching_date: "01/10/2000",
     hasShortlist: true,
-    frontend_github_link:
-      "https://github.com/abdullahalnomandev/BOOKING_HOTELL",
-    backend_github_link:
-      "https://github.com/abdullahalnomandev/BOOKING_HOTEL/tree/master/server",
-    live_link: "https://dreambooking.netlify.app/",
-    image_url: hotelHome,
+    frontend_github_link: "https://github.com/abdullahalnomandev/BOOKING_HOTEL",
+    backend_github_link: "https://github.com/abdullahalnomandev/BOOKING_HOTEL",
+    live_link: "https://booking-hotel-dun.vercel.app",
+    image_url:
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752050760/serviceImages/hotel-home_gqa882.jpg",
+    images: [
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053805/serviceImages/Screenshot_38_etypem.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053803/serviceImages/Screenshot_39_xnmg2i.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053801/serviceImages/Screenshot_40_vranss.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053800/serviceImages/Screenshot_41_go87tf.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053799/serviceImages/Screenshot_42_gow4gh.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053784/serviceImages/Screenshot_43_o586a8.jpg",
+    ],
   },
   {
     id: 3,
@@ -75,7 +87,8 @@ export const projects = [
     backend_github_link:
       "https://github.com/abdullahalnomandev/repair-service-server",
     live_link: "https://restore-repaier-service.web.app",
-    image_url: restoreHome,
+    image_url:
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752050789/serviceImages/fixomiz-home_eqjxri.jpg",
   },
   {
     id: 4,
@@ -98,7 +111,8 @@ export const projects = [
     backend_github_link:
       "https://github.com/abdullahalnomandev/-ratro-them-blog-server",
     live_link: "https://dream-shop-d7e59.web.app/",
-    image_url: dreamShopHome,
+    image_url:
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752050819/serviceImages/dream-shop_dx2wio.png",
   },
   {
     id: 5,
@@ -123,6 +137,7 @@ export const projects = [
     backend_github_link:
       "https://github.com/abdullahalnomandev/fixmiox-auto-service-server",
     live_link: "https://car-repair-service-11880.firebaseapp.com/home",
-    image_url: fixomizHome,
+    image_url:
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752050842/serviceImages/fixomiz-home_s8o6cc.jpg",
   },
 ];

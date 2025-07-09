@@ -7,18 +7,27 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
+import { PiReadCvLogoThin } from "react-icons/pi";
 import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       const threshold = window.innerHeight * 0.1;
       setIsFixed(window.scrollY > threshold);
+
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(progress);
     };
+
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
@@ -41,6 +50,12 @@ const Navbar = () => {
           ? "sticky top-0 left-0 right-0 z-50 backdrop-blur bg-white/70 shadow-md"
           : "bg-[#f4f6ff]"
       }`}>
+      {/* Scroll Progress Bar */}
+      <div
+        className='h-1 bg-gradient-to-r from-pink-500 to-rose-500 fixed top-0 left-0 z-[60] transition-all duration-200'
+        style={{ width: `${scrollProgress}%` }}
+      />
+
       <nav className='flex items-center justify-between px-4 md:px-16 py-4 relative'>
         <Link href='/'>
           <Image src={logo} width={80} height={50} alt='Abdullah Al Noman' />
@@ -69,7 +84,8 @@ const Navbar = () => {
 
           <button
             onClick={() => window.open(downloadLink)}
-            className='relative inline-block overflow-hidden rounded border border-pink-500 px-6 py-2 text-pink-500 transition-all duration-300 group hover:text-white'>
+            className='relative inline-flex items-center gap-2 overflow-hidden rounded border border-pink-500 px-2 py-2 text-pink-500 transition-all duration-300 group hover:text-white'>
+            <PiReadCvLogoThin className='text-2xl text-pink-800 group-hover:text-white transition-colors duration-300 relative z-10' />
             <span className='relative z-10'>Resume</span>
             <div className='absolute inset-0 z-0 scale-x-0 bg-gradient-to-r from-pink-500 to-rose-500 transition-transform duration-300 group-hover:scale-x-100 origin-left' />
           </button>
@@ -96,11 +112,9 @@ const Navbar = () => {
             ))}
 
             <button
-              onClick={() => {
-                setIsOpen(false);
-                window.open(downloadLink);
-              }}
-              className='mt-2 relative inline-block overflow-hidden rounded border border-pink-500 px-6 py-2 text-pink-500 transition-all duration-300 group hover:text-white'>
+              onClick={() => window.open(downloadLink)}
+              className='relative inline-flex items-center gap-2 overflow-hidden rounded border border-pink-500 px-2 py-2 text-pink-500 transition-all duration-300 group hover:text-white'>
+              <PiReadCvLogoThin className='text-2xl text-pink-800 group-hover:text-white transition-colors duration-300 relative z-10' />
               <span className='relative z-10'>Resume</span>
               <div className='absolute inset-0 z-0 scale-x-0 bg-gradient-to-r from-pink-500 to-rose-500 transition-transform duration-300 group-hover:scale-x-100 origin-left' />
             </button>

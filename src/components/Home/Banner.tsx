@@ -54,9 +54,14 @@ const Banner = () => {
               </button>
             </Link>
             <Link href='/contact'>
-              <button className='relative overflow-hidden btn-secondary border bg-transparent p-2.5 px-6 rounded text-black text-xl transition-all duration-300 ease-in-out hover:text-white border-[#ff35b4] group'>
-                <span className='relative '>Get In Touch</span>
-                <div className='absolute inset-0 bg-gradient-to-r from-[#ff35b4] to-[#ff193f] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left'></div>
+              <button className='relative overflow-hidden btn-secondary border bg-transparent p-2.5 px-6 rounded text-black text-xl transition-all duration-300 ease-in-out border-[#ff35b4] group'>
+                {/* Hover background */}
+                <div className='absolute inset-0 z-0 bg-gradient-to-r from-[#ff35b4] to-[#ff193f] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out' />
+
+                {/* Button text on top */}
+                <span className='relative z-10 group-hover:text-white transition-colors duration-300'>
+                  Get In Touch
+                </span>
               </button>
             </Link>
           </div>
@@ -66,8 +71,8 @@ const Banner = () => {
         <div className='hidden md:block md:col-span-5 justify-center md:justify-end'>
           <div className='group relative w-[280px] h-[280px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]'>
             {/* Main image container with 3D effect */}
-            <div className='absolute inset-0 rounded-2xl bg-gradient-to-br from-[#6047ec] to-[#ff35b4] p-1 shadow-xl transform transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-6 rotate-[5deg]'>
-              <div className='relative h-full w-full rounded-xl overflow-hidden bg-white'>
+            <div className='absolute inset-0 rounded-full bg-gradient-to-br from-[#6047ec] to-[#ff35b4] p-1 shadow-xl transform transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-6 rotate-[5deg]'>
+              <div className='relative h-full w-full rounded-full overflow-hidden bg-white'>
                 <Image
                   src={abdullah_al_noman}
                   alt='Abdullah Al Noman'

@@ -14,7 +14,7 @@ const SomeBlogs = () => {
         {blogPosts.slice(0, 3).map((post) => (
           <article
             key={post.id}
-            className='group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col'
+            className='group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col hover:scale-105'
             data-aos='flip-left'
             data-aos-duration='1000'>
             {/* Image */}

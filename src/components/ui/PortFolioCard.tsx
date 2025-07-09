@@ -21,18 +21,15 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
     description,
   } = item;
 
-  const isHovered = hoverId === id;
-
   return (
     <div
       data-aos='flip-left'
       data-aos-duration='1000'
-      className={`col-span-12 md:col-span-6 lg:col-span-4 transition-transform duration-300 ${
-        isHovered ? "scale-[1.03]" : ""
+      className={`col-span-12 md:col-span-6 lg:col-span-4 transition-transform duration-300 
       }`}
       onMouseEnter={() => setHoverId?.(id)}
       onMouseLeave={() => setHoverId?.(null)}>
-      <div className='h-full flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group'>
+      <div className='h-full flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group hover:scale-105 '>
         {/* Image with Hover Description */}
         <div className='relative h-48 overflow-hidden'>
           <Image
