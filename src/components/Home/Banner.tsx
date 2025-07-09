@@ -16,7 +16,7 @@ const Banner = () => {
       }}>
       <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 items-center gap-8'>
         {/* Left Content */}
-        <div className='md:col-span-7 space-y-6'>
+        <div className='md:col-span-7 space-y-6' data-aos='fade-right'>
           <h2 className='text-2xl font-bold font-[Bangla393] text-gray-800 tracking-wide'>
             Hello! My name is
           </h2>
@@ -68,11 +68,14 @@ const Banner = () => {
         </div>
 
         {/* Right Image */}
-        <div className='hidden md:block md:col-span-5 justify-center md:justify-end'>
+        <div
+          className='hidden md:block md:col-span-5 justify-center md:justify-end'
+          data-aos='fade-left'>
           <div className='group relative w-[280px] h-[280px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]'>
-            {/* Main image container with 3D effect */}
-            <div className='absolute inset-0 rounded-full bg-gradient-to-br from-[#6047ec] to-[#ff35b4] p-1 shadow-xl transform transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-6 rotate-[5deg]'>
-              <div className='relative h-full w-full rounded-full overflow-hidden bg-white'>
+            {/* Slanted gradient border container */}
+            <div className='absolute inset-0 bg-gradient-to-br from-[#6047ec] to-[#ff35b4] p-1 shadow-xl transform transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-3 rotate-[2deg] skew-y-[2deg]'>
+              {/* Inner white container with slight skew opposite for straight image */}
+              <div className='relative h-full w-full bg-white overflow-hidden shadow-lg skew-y-[-2deg]'>
                 <Image
                   src={abdullah_al_noman}
                   alt='Abdullah Al Noman'
@@ -81,14 +84,13 @@ const Banner = () => {
                   className='object-cover object-center transition-transform duration-500 group-hover:scale-110'
                   priority
                 />
-
-                {/* Professional overlay with depth */}
+                {/* Overlay on hover */}
                 <div className='absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
               </div>
             </div>
 
-            {/* Enhanced backdrop glow */}
-            <div className='absolute -inset-2 bg-gradient-to-r from-[#6047ec] to-[#ff35b4] rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-all duration-300 '></div>
+            {/* Soft glow behind */}
+            <div className='absolute -inset-2 bg-gradient-to-r from-[#6047ec] to-[#ff35b4] blur-3xl opacity-20 group-hover:opacity-30 transition-all duration-300'></div>
           </div>
         </div>
       </div>

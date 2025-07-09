@@ -1,7 +1,7 @@
 import Footer from "../Home/Footer";
 import Navbar from "../ui/Navbar";
+import ScrollToTopButton from "../ui/ScrollToTopButton";
 import Sidebar from "../ui/Sidebar";
-
 interface IProps {
   children: React.ReactNode;
 }
@@ -12,6 +12,7 @@ const Content = ({ children }: IProps) => {
       <div className='sm:px-16 px-4 w-full bg-[#f4f6ff] dark:bg-black dark:text-white'>
         {children}
       </div>
+      <ScrollToTopButton />
       <Sidebar />
       <Footer />
     </div>

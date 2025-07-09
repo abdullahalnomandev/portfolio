@@ -1,6 +1,7 @@
 "use client";
 
 import logo from "@/assets/images/Abdullah_Al_Noman_Logo.png";
+import footerBG from "@/assets/images/footer-bg.png";
 import socialLinks from "@/data/socialLinks";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,8 +36,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className='w-full text-primary '>
-      <div className='max-w-7xl mx-auto px-4 sm:px-16 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12'>
+    <footer
+      className='w-full text-primary bg-no-repeat bg-cover bg-center relative'
+      style={{ backgroundImage: `url(${footerBG.src})` }}>
+      {/* Optional overlay for better text contrast */}
+      <div className='absolute inset-0 bg-black/15 pointer-events-none'></div>
+
+      <div className='relative max-w-7xl mx-auto px-4 sm:px-16 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12'>
         {/* Logo & About */}
         <div>
           <Link href='/' className='inline-block'>
@@ -50,7 +56,7 @@ const Footer = () => {
 
         {/* Company */}
         <div>
-          <h4 className='text-base font-semibold mb-4'>Company</h4>
+          <h4 className='text-base font-semibold mb-4 text-white'>Company</h4>
           <ul className='space-y-2 text-sm text-white/90'>
             <li>
               <Link href='/about' className='hover:underline'>
@@ -77,7 +83,7 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-          <h4 className='text-base font-semibold mb-4'>Services</h4>
+          <h4 className='text-base font-semibold mb-4 text-white'>Services</h4>
           <ul className='space-y-2 text-sm text-white/90'>
             <li>Full-Stack Web Development</li>
             <li>Headless CMS & API Integration</li>
@@ -88,7 +94,7 @@ const Footer = () => {
 
         {/* Contact + Socials */}
         <div>
-          <h4 className='text-base font-semibold mb-4'>Contact</h4>
+          <h4 className='text-base font-semibold mb-4 text-white'>Contact</h4>
           <p className='text-sm text-white/80'>Dhaka, Bangladesh</p>
           <p className='mt-2 text-sm text-white/80'>
             Email:{" "}
@@ -108,7 +114,6 @@ const Footer = () => {
           {/* Social Icons */}
           <div className='flex flex-wrap gap-3 mt-4 text-xl'>
             {links.map(({ id, href }) => {
-              // Accessible label based on href
               const label = href.includes("linkedin")
                 ? "LinkedIn"
                 : href.includes("github")
@@ -139,7 +144,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='border-t border-white/20 py-6 text-center text-sm text-white/70'>
+      <div className='border-t border-white/20 py-6 text-center text-sm text-white/70 relative z-10'>
         © {year} Abdullah Al Noman. All rights reserved.
       </div>
     </footer>
