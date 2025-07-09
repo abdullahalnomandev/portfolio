@@ -11,5 +11,5 @@ export interface IPortfolio {
   backend_github_link: string;
   live_link: string;
   image_url: string | StaticImageData; // ✅ Fix is here
-  images: string[];
+  images?: string[];
 }
