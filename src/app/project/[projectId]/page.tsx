@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 import { IPortfolio } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaGithub, FaLink } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -32,7 +32,7 @@ const ProjectPage = ({ params }: { params: { projectId: string } }) => {
   const [error, setError] = useState<string | null>(null);
 
   // Fetch project data on component mount
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchProject = async () => {
       try {
         const data = await getProject(projectId);
