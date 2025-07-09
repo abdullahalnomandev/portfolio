@@ -68,7 +68,6 @@ const ProjectPage = ({ params }: { params: { projectId: string } }) => {
               navigation
               pagination={{ clickable: true }}
               loop
-              lazy={true} // Lazy load images for performance
               modules={[Navigation, Pagination]}
               className='rounded-2xl overflow-hidden shadow-2xl border border-gray-200'
               style={{ aspectRatio: "16 / 9" }} // Maintain aspect ratio
