@@ -58,7 +58,7 @@ const ProjectPage = ({ params }: { params: { projectId: string } }) => {
     <div className='max-w-7xl mx-auto px-4 py-12'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-start'>
         {/* Left: Swiper Carousel */}
-        {project.images?.length > 0 && (
+        {(project.images ?? []).length > 0 && (
           <div
             className='w-full max-w-xl mx-auto md:mx-0'
             data-aos='fade-right'>
