@@ -14,7 +14,9 @@ const SomeBlogs = () => {
         {blogPosts.slice(0, 3).map((post) => (
           <article
             key={post.id}
-            className='group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col hover:scale-105'
+            className='group bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700 
+                 rounded-2xl shadow-sm hover:shadow-md dark:shadow-none dark:hover:shadow-md 
+                 transition-shadow duration-300 overflow-hidden flex flex-col hover:scale-105'
             data-aos='flip-left'
             data-aos-duration='1000'>
             {/* Image */}
@@ -31,12 +33,16 @@ const SomeBlogs = () => {
             {/* Content */}
             <div className='p-6 flex flex-col flex-1 justify-between'>
               <div>
-                <h2 className='text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors'>
+                <h2
+                  className='text-xl font-semibold text-gray-900 dark:text-slate-100 
+                         group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
                   {post.title}
                 </h2>
 
-                <div className='mt-2 text-sm text-gray-500'>
-                  <span className='inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium'>
+                <div className='mt-2 text-sm text-gray-500 dark:text-gray-400'>
+                  <span
+                    className='inline-block bg-gray-100 dark:bg-gray-800/40 text-gray-700 dark:text-gray-300 
+                             px-2 py-1 rounded-full text-xs font-medium'>
                     {new Date(post.date).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "short",
@@ -46,7 +52,7 @@ const SomeBlogs = () => {
                   <span className='ml-2'>· {post.author}</span>
                 </div>
 
-                <p className='mt-4 text-sm text-gray-600 leading-relaxed line-clamp-4'>
+                <p className='mt-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-4'>
                   {post.excerpt}
                 </p>
               </div>
@@ -55,7 +61,8 @@ const SomeBlogs = () => {
                 <Link
                   href={post.slug}
                   target='_blank'
-                  className='text-blue-600 font-medium text-sm hover:underline transition-colors'>
+                  className='text-blue-600 dark:text-blue-400 font-medium text-sm 
+                       hover:underline transition-colors'>
                   Read full article →
                 </Link>
               </div>
@@ -67,7 +74,9 @@ const SomeBlogs = () => {
       <div className='text-center mt-8'>
         <Link
           href='/blog'
-          className='inline-block border border-blue-500 text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-blue-500 hover:text-white transition-colors duration-300'>
+          className='inline-block border border-blue-500 text-blue-600 dark:text-blue-400 
+               px-6 py-2 rounded-full font-medium hover:bg-blue-500 hover:text-white 
+               dark:hover:bg-blue-600 dark:hover:text-white transition-colors duration-300'>
           See More
         </Link>
       </div>

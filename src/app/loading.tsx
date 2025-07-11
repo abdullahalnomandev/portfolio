@@ -1,6 +1,6 @@
 const LoadingPage = () => {
   return (
-    <div className='min-h-[80vh] flex flex-col items-center justify-center bg-white '>
+    <div className='min-h-[80vh] flex flex-col items-center justify-center bg-white dark:bg-slate-900'>
       <div className='relative flex items-center justify-center'>
         <div className='h-28 w-28 rounded-full border-4 border-t-primary border-r-transparent border-b-primary border-l-transparent animate-spin'></div>
         <div className='absolute'>

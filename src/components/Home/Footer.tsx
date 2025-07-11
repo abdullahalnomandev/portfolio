@@ -37,10 +37,10 @@ const Footer = () => {
 
   return (
     <footer
-      className='w-full text-primary bg-no-repeat bg-cover bg-center relative'
+      className='w-full text-primary bg-no-repeat bg-cover bg-center relative dark:bg-[#0f172a]'
       style={{ backgroundImage: `url(${footerBG.src})` }}>
       {/* Optional overlay for better text contrast */}
-      <div className='absolute inset-0 bg-black/15 pointer-events-none'></div>
+      <div className='absolute inset-0 bg-black/15 dark:bg-black/40 pointer-events-none'></div>
 
       <div className='relative max-w-7xl mx-auto px-4 sm:px-16 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12'>
         {/* Logo & About */}
@@ -48,7 +48,7 @@ const Footer = () => {
           <Link href='/' className='inline-block'>
             <Image src={logo} alt='Logo' width={140} height={40} />
           </Link>
-          <p className='mt-4 text-sm leading-relaxed text-white/80'>
+          <p className='mt-4 text-sm leading-relaxed text-white/80 dark:text-gray-300'>
             Crafting scalable, high-quality digital products with performance,
             accessibility, and modern UI/UX principles.
           </p>
@@ -56,8 +56,10 @@ const Footer = () => {
 
         {/* Company */}
         <div>
-          <h4 className='text-base font-semibold mb-4 text-white'>Company</h4>
-          <ul className='space-y-2 text-sm text-white/90'>
+          <h4 className='text-base font-semibold mb-4 text-white dark:text-white'>
+            Company
+          </h4>
+          <ul className='space-y-2 text-sm text-white/90 dark:text-gray-300'>
             <li>
               <Link href='/about' className='hover:underline'>
                 About Us
@@ -83,8 +85,10 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-          <h4 className='text-base font-semibold mb-4 text-white'>Services</h4>
-          <ul className='space-y-2 text-sm text-white/90'>
+          <h4 className='text-base font-semibold mb-4 text-white dark:text-white'>
+            Services
+          </h4>
+          <ul className='space-y-2 text-sm text-white/90 dark:text-gray-300'>
             <li>Full-Stack Web Development</li>
             <li>Headless CMS & API Integration</li>
             <li>UI/UX Design Systems</li>
@@ -94,9 +98,13 @@ const Footer = () => {
 
         {/* Contact + Socials */}
         <div>
-          <h4 className='text-base font-semibold mb-4 text-white'>Contact</h4>
-          <p className='text-sm text-white/80'>Dhaka, Bangladesh</p>
-          <p className='mt-2 text-sm text-white/80'>
+          <h4 className='text-base font-semibold mb-4 text-white dark:text-white'>
+            Contact
+          </h4>
+          <p className='text-sm text-white/80 dark:text-gray-300'>
+            Dhaka, Bangladesh
+          </p>
+          <p className='mt-2 text-sm text-white/80 dark:text-gray-300'>
             Email:{" "}
             <a
               href='mailto:abdullahalnoman1512@gmail.com'
@@ -104,7 +112,7 @@ const Footer = () => {
               abdullahalnoman1512@gmail.com
             </a>
           </p>
-          <p className='text-sm text-white/80'>
+          <p className='text-sm text-white/80 dark:text-gray-300'>
             Phone:{" "}
             <a href='tel:+8801741581512' className='hover:underline'>
               +8801741-581512
@@ -135,7 +143,7 @@ const Footer = () => {
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label={label}
-                  className='text-white hover:text-gray-300 transition'>
+                  className='text-white hover:text-gray-300 dark:hover:text-gray-400 transition'>
                   {renderIcon(id)}
                 </a>
               );
@@ -144,7 +152,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='border-t border-white/20 py-6 text-center text-sm text-white/70 relative z-10'>
+      <div className='border-t border-white/20 py-6 text-center text-sm text-white/70 dark:text-gray-400 relative z-10'>
         © {year} Abdullah Al Noman. All rights reserved.
       </div>
     </footer>

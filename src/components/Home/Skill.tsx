@@ -51,17 +51,18 @@ const SkillBar = ({
     className={`transition-opacity duration-700 ${
       inView ? "opacity-100 animate-fadeInUp" : "opacity-0"
     }`}
-    style={{ animationDelay: `${idx * 150}ms` }}
-  >
-    <div className="flex justify-between mb-1">
-      <span className="font-medium text-gray-800">{name}</span>
-      <span className="text-sm italic text-gray-600">
+    style={{ animationDelay: `${idx * 150}ms` }}>
+    <div className='flex justify-between mb-1'>
+      <span className='font-medium text-gray-800 dark:text-gray-200'>
+        {name}
+      </span>
+      <span className='text-sm italic text-gray-600 dark:text-gray-400'>
         {getSkillLabel(progress)}
       </span>
     </div>
-    <div className="w-full bg-gray-200 rounded-full h-4 shadow-inner overflow-hidden">
+    <div className='w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 shadow-inner overflow-hidden'>
       <div
-        className="h-4 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full transition-all duration-1000 ease-out"
+        className='h-4 bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-600 dark:to-blue-800 rounded-full transition-all duration-1000 ease-out'
         style={{ width: `${animatedProgress}%` }}
       />
     </div>
@@ -82,9 +83,9 @@ const SkillSection = ({
   inView: boolean;
   titleColor: string;
 }) => (
-  <div className="w-full md:w-1/2 px-2">
+  <div className='w-full md:w-1/2 px-2'>
     <h3 className={`text-xl font-bold ${titleColor} mb-4`}>{title}</h3>
-    <div className="space-y-5">
+    <div className='space-y-5'>
       {skills.map((skill, idx) => (
         <SkillBar
           key={skill.id}
@@ -116,25 +117,24 @@ const Skill = () => {
   return (
     <section
       ref={ref}
-      className="max-w-6xl mx-auto px-6 py-12"
-      aria-label="Skills section"
-    >
-      <Headline title="Skills" />
+      className='max-w-6xl mx-auto px-6 py-12'
+      aria-label='Skills section'>
+      <Headline title='Skills' />
 
-      <div className=" flex flex-col md:flex-row md:space-x-6 space-y-12 md:space-y-0">
+      <div className=' flex flex-col md:flex-row md:space-x-6 space-y-12 md:space-y-0'>
         <SkillSection
-          title="Frontend Skills"
+          title='Frontend Skills'
           skills={frontendSkills}
           animatedProgress={frontendProgress}
           inView={inView}
-          titleColor="text-pink-500"
+          titleColor='text-pink-500'
         />
         <SkillSection
-          title="Backend Skills"
+          title='Backend Skills'
           skills={backendSkills}
           animatedProgress={backendProgress}
           inView={inView}
-          titleColor="text-pink-500"
+          titleColor='text-pink-500'
         />
       </div>
 

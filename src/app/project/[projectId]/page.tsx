@@ -55,7 +55,7 @@ const ProjectPage = ({ params }: { params: { projectId: string } }) => {
   }
 
   return (
-    <div className='max-w-7xl mx-auto px-4 py-12'>
+    <div className='max-w-7xl mx-auto px-4 py-12 dark:bg-gray-900'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-start'>
         {/* Left: Swiper Carousel */}
         {(project.images ?? []).length > 0 && (
@@ -69,7 +69,7 @@ const ProjectPage = ({ params }: { params: { projectId: string } }) => {
               pagination={{ clickable: true }}
               loop
               modules={[Navigation, Pagination]}
-              className='rounded-2xl overflow-hidden shadow-2xl border border-gray-200'
+              className='rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700'
               style={{ aspectRatio: "16 / 9" }} // Maintain aspect ratio
               fadeEffect={{ crossFade: true }}
               effect='fade'>
@@ -99,16 +99,15 @@ const ProjectPage = ({ params }: { params: { projectId: string } }) => {
             </Swiper>
           </div>
         )}
-
         {/* Right: Content */}
         <div className='space-y-6' data-aos='fade-left'>
           <div>
-            <h1 className='text-3xl font-bold text-gray-900 mb-1'>
+            <h1 className='text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1'>
               {project.name}
             </h1>
           </div>
-
-          <div className='text-gray-700 text-base leading-relaxed'>
+          <div className='text-gray-700 dark:text-gray-300 text-base leading-relaxed'></div>
+          <div className='text-gray-700 dark:text-slate-300 text-base leading-relaxed'>
             {project.description}
           </div>
 

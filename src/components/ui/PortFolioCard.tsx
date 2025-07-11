@@ -25,11 +25,13 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
     <div
       data-aos='flip-left'
       data-aos-duration='1000'
-      className={`col-span-12 md:col-span-6 lg:col-span-4 transition-transform duration-300 
-      }`}
+      className='col-span-12 md:col-span-6 lg:col-span-4 transition-transform duration-300'
       onMouseEnter={() => setHoverId?.(id)}
       onMouseLeave={() => setHoverId?.(null)}>
-      <div className='h-full flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group hover:scale-105 '>
+      <div
+        className='h-full flex flex-col bg-white dark:bg-[#1e293b] border border-gray-100 dark:border-gray-700
+               rounded-xl overflow-hidden shadow-sm hover:shadow-lg dark:shadow-none dark:hover:shadow-md
+               transition-all duration-300 group hover:scale-105'>
         {/* Image with Hover Description */}
         <div className='relative h-48 overflow-hidden'>
           <Image
@@ -38,21 +40,26 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
             fill
             className='object-cover rounded-t-xl transform transition-transform duration-500 group-hover:scale-105'
           />
-          <div className='absolute inset-0 bg-black bg-opacity-70 text-white p-4 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm'>
+          <div
+            className='absolute inset-0 bg-black/70 dark:bg-black/80 text-white p-4 text-sm
+                      opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm'>
             <p className='line-clamp-9'>{description}</p>
           </div>
         </div>
 
         {/* Content */}
         <div className='p-5 flex flex-col flex-1 space-y-4'>
-          <h3 className='text-lg font-semibold text-gray-900'>{name}</h3>
+          <h3 className='text-lg font-semibold text-gray-900 dark:text-slate-100'>
+            {name}
+          </h3>
 
           {/* Technologies */}
           <div className='flex flex-wrap gap-2 min-h-[60px] items-start'>
             {technologies.map((tech, i) => (
               <span
                 key={i}
-                className='inline-block bg-pink-100 text-pink-600 text-xs font-medium px-3 py-1 rounded-full'>
+                className='inline-block bg-pink-100 text-pink-600 dark:bg-pink-900/30 dark:text-pink-300
+                       text-xs font-medium px-3 py-1 rounded-full'>
                 {tech}
               </span>
             ))}
@@ -64,7 +71,8 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
               <Link
                 href={live_link}
                 target='_blank'
-                className='inline-flex items-center text-sm text-blue-600 hover:text-blue-800 transition-colors'>
+                className='inline-flex items-center text-sm text-blue-600 hover:text-blue-800
+                       dark:text-blue-400 dark:hover:text-blue-300 transition-colors'>
                 <FaLink className='mr-1' />
                 Live
               </Link>
@@ -73,7 +81,8 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
               <Link
                 href={frontend_github_link}
                 target='_blank'
-                className='inline-flex items-center text-sm text-gray-600 hover:text-black transition-colors'>
+                className='inline-flex items-center text-sm text-gray-600 hover:text-black
+                       dark:text-gray-300 dark:hover:text-white transition-colors'>
                 <FaGithub className='mr-1' />
                 Frontend
               </Link>
@@ -82,14 +91,16 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
               <Link
                 href={backend_github_link}
                 target='_blank'
-                className='inline-flex items-center text-sm text-gray-600 hover:text-black transition-colors'>
+                className='inline-flex items-center text-sm text-gray-600 hover:text-black
+                       dark:text-gray-300 dark:hover:text-white transition-colors'>
                 <FaGithub className='mr-1' />
                 Backend
               </Link>
             )}
             <Link
               href={`/project/${id}`}
-              className='inline-flex items-center text-sm text-gray-600 hover:text-black transition-colors'>
+              className='inline-flex items-center text-sm text-gray-600 hover:text-black
+                     dark:text-gray-300 dark:hover:text-white transition-colors'>
               <FaEye className='mr-1' />
               Details
             </Link>

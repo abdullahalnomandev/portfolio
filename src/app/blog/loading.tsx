@@ -2,11 +2,11 @@ import Skeleton from "@/components/ui/Skeleton";
 
 const BlogSkeleton = () => {
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 dark:bg-slate-900'>
       {Array.from({ length: 6 }).map((_, index) => (
         <div
           key={index}
-          className='bg-white border border-gray-200 rounded-2xl shadow-sm p-4 space-y-4'>
+          className='bg-white border border-gray-200 rounded-2xl shadow-sm p-4 space-y-4 dark:border-slate-800 dark:bg-slate-800'>
           {/* Image Skeleton */}
           <Skeleton className='h-52 w-full rounded-lg' />
 

@@ -32,18 +32,18 @@ const BlogPage = () => {
         />
       </Head>
 
-      <section className=' py-16'>
+      <section className='py-16'>
         <div className='max-w-7xl mx-auto'>
           {/* Header */}
           <div
             className='text-center mb-12 max-w-3xl mx-auto'
             data-aos='fade-down'>
-            <h1 className='text-4xl sm:text-5xl font-extrabold text-gray-900'>
+            <h1 className='text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-slate-100'>
               Insights, Tutorials & Engineering Notes
             </h1>
-            <p className='text-gray-600 mt-4 text-lg leading-relaxed'>
+            <p className='text-gray-600 dark:text-gray-400 mt-4 text-lg leading-relaxed'>
               I write about modern JavaScript, frontend architecture,
-              performance, and personal lessons from real-world software
+              performance, and personal lessons from real‑world software
               development.
             </p>
           </div>
@@ -53,7 +53,9 @@ const BlogPage = () => {
             {blogPosts.map((post) => (
               <article
                 key={post.id}
-                className='group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col'>
+                className='group bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700
+                     rounded-2xl shadow-sm hover:shadow-md dark:shadow-none dark:hover:shadow-md
+                     transition-shadow duration-300 overflow-hidden flex flex-col'>
                 {/* Image */}
                 <div className='relative h-52 w-full'>
                   <Image
@@ -70,12 +72,16 @@ const BlogPage = () => {
                 {/* Content */}
                 <div className='p-6 flex flex-col flex-1 justify-between'>
                   <div>
-                    <h2 className='text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors'>
+                    <h2
+                      className='text-xl font-semibold text-gray-900 dark:text-slate-100
+                             group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
                       {post.title}
                     </h2>
 
-                    <div className='mt-2 text-sm text-gray-500'>
-                      <span className='inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium'>
+                    <div className='mt-2 text-sm text-gray-500 dark:text-gray-400'>
+                      <span
+                        className='inline-block bg-gray-100 dark:bg-gray-800/40 text-gray-700 dark:text-gray-300
+                                   px-2 py-1 rounded-full text-xs font-medium'>
                         {new Date(post.date).toLocaleDateString("en-US", {
                           year: "numeric",
                           month: "short",
@@ -85,7 +91,7 @@ const BlogPage = () => {
                       <span className='ml-2'>· {post.author}</span>
                     </div>
 
-                    <p className='mt-4 text-sm text-gray-600 leading-relaxed line-clamp-4'>
+                    <p className='mt-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-4'>
                       {post.excerpt}
                     </p>
                   </div>
@@ -94,7 +100,8 @@ const BlogPage = () => {
                     <Link
                       href={post.slug}
                       target='_blank'
-                      className='text-blue-600 font-medium text-sm hover:underline transition-colors'>
+                      className='text-blue-600 dark:text-blue-400 font-medium text-sm
+                           hover:underline transition-colors'>
                       Read full article →
                     </Link>
                   </div>
