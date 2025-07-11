@@ -155,8 +155,7 @@ const ContactPage = () => {
               +8801741581512
             </a>
           </div>
-
-          {/* Email */}
+          .{/* Email */}
           <div className='bg-[#e8efff] rounded-xl p-8 flex flex-col items-center text-center'>
             <div className='bg-white p-4 rounded-full mb-4'>
               <FaEnvelope className='text-blue-600 w-6 h-6' />
@@ -168,7 +167,6 @@ const ContactPage = () => {
               abdullahalnoman1512@gmail.com
             </a>
           </div>
-
           {/* Location */}
           <div className='bg-[#e8efff] rounded-xl p-8 flex flex-col items-center text-center'>
             <div className='bg-white p-4 rounded-full mb-4'>
