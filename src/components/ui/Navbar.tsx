@@ -71,7 +71,7 @@ const Navbar = () => {
     <header
       className={`transition-all duration-300 ${
         isFixed
-          ? "sm:sticky top-0 left-0 right-0 z-50 backdrop-blur bg-white/70 dark:bg-gray-900/70 shadow-md"
+          ? "md:sticky top-0 left-0 right-0 z-50 backdrop-blur bg-white/70 dark:bg-gray-900/70 shadow-md"
           : "bg-[#f4f6ff] dark:bg-gray-900"
       }`}>
       {/* Scroll Progress Bar */}
@@ -86,12 +86,22 @@ const Navbar = () => {
           <Image src={logo} width={80} height={50} alt='Abdullah Al Noman' />
         </Link>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className='md:hidden text-3xl text-blue-600 dark:text-blue-400 z-[60]'>
-          {isOpen ? <RxCross2 /> : <FiMenu />}
-        </button>
+        <div className='md:hidden flex items-center gap-1 text-3xl text-blue-600 dark:text-blue-400 z-[60]'>
+          {/* Theme toggle (mobile & desktop) */}
+          <button
+            onClick={toggleTheme}
+            className={`${
+              isOpen ? "hidden" : ""
+            } md:hidden text-xl mr-2 text-yellow-500 dark:text-yellow-300 z-[60]`}
+            aria-label='Toggle theme'>
+            {theme === "light" ? <FaMoon /> : <MdOutlineLightMode />}
+          </button>
+
+          {/* Mobile hamburger */}
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <RxCross2 /> : <FiMenu />}
+          </button>
+        </div>
 
         {/* Desktop Menu */}
         <div className='hidden md:flex items-center space-x-6 text-base font-medium text-gray-700 dark:text-gray-300'>
