@@ -38,12 +38,12 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
             src={image_url || "/default.jpg"}
             alt={name}
             fill
-            className='object-cover rounded-t-xl transform transition-transform duration-500 group-hover:scale-105'
+            className='object-cover rounded-t-xl transform group-hover:scale-105'
           />
           <div
             className='absolute inset-0 bg-black/70 dark:bg-black/80 text-white p-4 text-sm
-                      opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm'>
-            <p className='line-clamp-9'>{description}</p>
+                      opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm overflow-y-auto'>
+            <p className='line-clamp-[8] overflow-hidden'>{description}</p>
           </div>
         </div>
 

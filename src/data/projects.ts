@@ -25,20 +25,29 @@ export const projects = [
     image_url:
       "https://res.cloudinary.com/dzghsspe7/image/upload/v1752050318/doctors_fqgtyz.jpg",
     images: [
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051079/serviceImages/Screenshot_26_mz3bif.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051076/serviceImages/Screenshot_27_ibgj3c.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051076/serviceImages/Screenshot_28_pswfb5.jpg",
       "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053540/serviceImages/Screenshot_34_yplxzc.jpg",
       "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053538/serviceImages/Screenshot_35_cedkum.jpg",
       "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053537/serviceImages/Screenshot_36_mghifc.jpg",
       "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053537/serviceImages/Screenshot_37_jqevdn.jpg",
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051079/serviceImages/Screenshot_26_mz3bif.jpg",
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051076/serviceImages/Screenshot_27_ibgj3c.jpg",
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051076/serviceImages/Screenshot_28_pswfb5.jpg",
     ],
   },
   {
     id: 2,
-    name: "Hotel Booking",
+    name: "HotelBooking BD",
     description:
-      "A  hotel booking application with responsive design. Features include user authentication, room booking validation to prevent double bookings, and an admin panel for managing hotels, rooms, admins and user bookings. Administrators can perform CRUD operations on hotel inventory and monitor booking status.",
+      "    A responsive hotel booking platform tailored for Bangladesh. " +
+      "Users can search and book specific rooms city-wise with real-time availability. " +
+      "Duplicate bookings on the same date are prevented through strict validation. " +
+      "Secure login is implemented using JWT authentication (Google OAuth optional). " +
+      "Modern UI built with Ant Design ensures a clean, professional experience. " +
+      "Users can view their booking history and leave hotel reviews. " +
+      "Admin panel allows full CRUD operations on rooms, bookings, users, and reviews. " +
+      "Admins can manage user roles and monitor system activity. " +
+      "Data integrity is maintained using MongoDB transactions. " +
+      "Designed to scale with future integrations like payments and multi-language support",
     technologies: [
       "React.js",
       "Ant Design",
@@ -55,14 +64,17 @@ export const projects = [
     backend_github_link: "https://github.com/abdullahalnomandev/BOOKING_HOTEL",
     live_link: "https://booking-hotel-dun.vercel.app",
     image_url:
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752050760/serviceImages/hotel-home_gqa882.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401672/Screenshot_23_mxf1rq.jpg",
     images: [
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053805/serviceImages/Screenshot_38_etypem.jpg",
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053803/serviceImages/Screenshot_39_xnmg2i.jpg",
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053801/serviceImages/Screenshot_40_vranss.jpg",
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053800/serviceImages/Screenshot_41_go87tf.jpg",
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053799/serviceImages/Screenshot_42_gow4gh.jpg",
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752053784/serviceImages/Screenshot_43_o586a8.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401672/Screenshot_23_mxf1rq.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401671/Screenshot_26_ag4b7c.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401672/Screenshot_25_qrwico.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401672/Screenshot_24_xp1hyz.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401671/Screenshot_32_fk9wai.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401671/Screenshot_28_xa76ym.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401671/Screenshot_30_oliqtn.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401671/Screenshot_29_lsun3o.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401670/Screenshot_31_x8fpf8.jpg",
     ],
   },
   {
