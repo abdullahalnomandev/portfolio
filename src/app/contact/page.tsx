@@ -80,7 +80,7 @@ const ContactPage = () => {
     <>
       {/* ───────────────────────── Contact Section ───────────────────────── */}
       <section
-        className='min-h-screen pb-8 flex flex-col md:flex-row gap-12 sm:p-8 md:p-16
+        className=' pb-8 flex flex-col md:flex-row gap-12 sm:p-8 md:p-16
                     font-sans text-gray-900 dark:text-slate-100 dark:bg-[#0f172a]'>
         {/* Left Form Panel */}
         <div

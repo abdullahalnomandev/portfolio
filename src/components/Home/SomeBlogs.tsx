@@ -7,62 +7,59 @@ import Headline from "../ui/Headline";
 
 const SomeBlogs = () => {
   return (
-    <section className='py-12'>
-      <Headline title='Some of My Article' />
+    <section className='py-18 px-4 sm:px-8 lg:px-12'>
+      <Headline title='Some of My Articles' />
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 my-6'>
+      <div className='grid grid-cols-1 gap-8 mt-10'>
         {blogPosts.slice(0, 3).map((post) => (
           <article
             key={post.id}
-            className='group bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700 
-                 rounded-2xl shadow-sm hover:shadow-md dark:shadow-none dark:hover:shadow-md 
-                 transition-shadow duration-300 overflow-hidden flex flex-col hover:scale-105'
-            data-aos='flip-left'
-            data-aos-duration='1000'>
+            data-aos='fade-up'
+            data-aos-duration='800'
+            className='group flex flex-col md:flex-row w-full bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 
+              rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden'>
             {/* Image */}
-            <div className='relative h-52 w-full'>
+            <div className='relative w-full md:w-1/2 h-56 md:h-auto'>
               <Image
                 src={post.image}
                 alt={post.title}
                 fill
-                className='object-cover transition-transform duration-300 group-hover:scale-105'
-                sizes='(max-width: 768px) 100vw, 33vw'
+                className='object-cover transition-transform duration-500 group-hover:scale-105'
+                sizes='(max-width: 768px) 100vw, 50vw'
+                priority
               />
             </div>
 
             {/* Content */}
-            <div className='p-6 flex flex-col flex-1 justify-between'>
+            <div className='w-full md:w-1/2 p-6 flex flex-col justify-between'>
               <div>
-                <h2
-                  className='text-xl font-semibold text-gray-900 dark:text-slate-100 
-                         group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
+                <h2 className='text-2xl font-semibold text-slate-800 dark:text-white font-serif mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
                   {post.title}
                 </h2>
 
-                <div className='mt-2 text-sm text-gray-500 dark:text-gray-400'>
-                  <span
-                    className='inline-block bg-gray-100 dark:bg-gray-800/40 text-gray-700 dark:text-gray-300 
-                             px-2 py-1 rounded-full text-xs font-medium'>
+                <p className='text-gray-700 dark:text-gray-300 text-sm leading-relaxed line-clamp-3 mb-4'>
+                  {post.excerpt}
+                </p>
+
+                <div className='flex items-center gap-2 text-xs font-medium text-white'>
+                  <span className='bg-blue-600 px-2 py-0.5 rounded-full'>
                     {new Date(post.date).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "short",
                       day: "numeric",
                     })}
                   </span>
-                  <span className='ml-2'>· {post.author}</span>
+                  <span className='bg-slate-600 px-2 py-0.5 rounded-full'>
+                    {post.author}
+                  </span>
                 </div>
-
-                <p className='mt-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-4'>
-                  {post.excerpt}
-                </p>
               </div>
 
-              <div className='mt-6'>
+              <div className='mt-6 pt-4 border-t border-gray-200 dark:border-slate-700'>
                 <Link
                   href={post.slug}
                   target='_blank'
-                  className='text-blue-600 dark:text-blue-400 font-medium text-sm 
-                       hover:underline transition-colors'>
+                  className='text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1'>
                   Read full article →
                 </Link>
               </div>
@@ -71,13 +68,13 @@ const SomeBlogs = () => {
         ))}
       </div>
 
-      <div className='text-center mt-8'>
+      <div className='text-center mt-12'>
         <Link
           href='/blog'
-          className='inline-block border border-blue-500 text-blue-600 dark:text-blue-400 
-               px-6 py-2 rounded-full font-medium hover:bg-blue-500 hover:text-white 
-               dark:hover:bg-blue-600 dark:hover:text-white transition-colors duration-300'>
-          See More
+          className='inline-flex items-center gap-2 border border-blue-500 text-blue-600 dark:text-blue-400 
+            px-6 py-2 rounded-full font-semibold hover:bg-blue-500 hover:text-white 
+            dark:hover:bg-blue-600 dark:hover:text-white transition-colors duration-300'>
+          See More Articles
         </Link>
       </div>
     </section>

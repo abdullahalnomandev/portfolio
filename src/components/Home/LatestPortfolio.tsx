@@ -12,8 +12,7 @@ const LatestPortfolio = () => {
   return (
     <section className='py-12 '>
       <Headline title='My Latest Projects' />
-
-      <div className='grid grid-cols-12 gap-6 my-6'>
+      <div className='space-y-8 my-6'>
         {projects
           .filter(({ hasShortlist }) => hasShortlist)
           .map((item) => (

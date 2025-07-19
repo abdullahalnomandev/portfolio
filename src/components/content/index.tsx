@@ -7,11 +7,9 @@ interface IProps {
 }
 const Content = ({ children }: IProps) => {
   return (
-    <div className='mx-auto '>
+    <div className='mx-auto'>
       <Navbar />
-      <div className='sm:px-16 px-4 w-full bg-[#f4f6ff] dark:bg-[#0f172a] dark:text-white'>
-        {children}
-      </div>
+      <div className='sm:px-16 max-w-7xl m-auto px-4 w-full '>{children}</div>
       <ScrollToTopButton />
       <Sidebar />
       <Footer />

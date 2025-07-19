@@ -23,7 +23,7 @@ export const projects = [
       "https://github.com/abdullahalnomandev/mr-chemist-doctors-backend",
     live_link: "https://mr-chemist-doctors.vercel.app/",
     image_url:
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752050318/doctors_fqgtyz.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752924196/Screenshot_32_lqkie2.jpg",
     images: [
       "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051079/serviceImages/Screenshot_26_mz3bif.jpg",
       "https://res.cloudinary.com/dzghsspe7/image/upload/v1752051076/serviceImages/Screenshot_27_ibgj3c.jpg",
@@ -64,8 +64,9 @@ export const projects = [
     backend_github_link: "https://github.com/abdullahalnomandev/BOOKING_HOTEL",
     live_link: "https://booking-hotel-dun.vercel.app",
     image_url:
-      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401672/Screenshot_23_mxf1rq.jpg",
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752924026/Screenshot_31_wdylgp.jpg",
     images: [
+      "https://res.cloudinary.com/dzghsspe7/image/upload/v1752919103/Screenshot_27_gtd3zt.jpg",
       "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401672/Screenshot_23_mxf1rq.jpg",
       "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401671/Screenshot_26_ag4b7c.jpg",
       "https://res.cloudinary.com/dzghsspe7/image/upload/v1752401672/Screenshot_25_qrwico.jpg",

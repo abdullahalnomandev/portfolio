@@ -40,7 +40,7 @@ const Footer = () => {
       className='w-full text-primary bg-no-repeat bg-cover bg-center relative dark:bg-[#0f172a]'
       style={{ backgroundImage: `url(${footerBG.src})` }}>
       {/* Optional overlay for better text contrast */}
-      <div className='absolute inset-0 bg-black/15 dark:bg-black/40 pointer-events-none'></div>
+      <div className=' max-w-7xl m-auto absolute inset-0 bg-black/15 dark:bg-black/40 pointer-events-none'></div>
 
       <div className='relative max-w-7xl mx-auto px-4 sm:px-16 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12'>
         {/* Logo & About */}

@@ -1,7 +1,8 @@
 import { IPortfolio } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import { FaEye, FaGithub, FaLink } from "react-icons/fa";
+import { FaEye, FaGithub } from "react-icons/fa";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 interface PortFolioCardProps {
   item: IPortfolio;
@@ -23,88 +24,87 @@ const PortFolioCard = ({ item, hoverId, setHoverId }: PortFolioCardProps) => {
 
   return (
     <div
-      data-aos='flip-left'
-      data-aos-duration='1000'
-      className='col-span-12 md:col-span-6 lg:col-span-4 transition-transform duration-300'
-      onMouseEnter={() => setHoverId?.(id)}
-      onMouseLeave={() => setHoverId?.(null)}>
+      data-aos='fade-up'
+      data-aos-duration='600'
+      className='relative flex flex-col md:flex-row bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden shadow-lg group transition duration-300 hover:shadow-3xl hover:-translate-y-2 max-w-md md:max-w-full mx-auto max-h-full md:max-h-80 '>
+      {/* Image Panel */}
       <div
-        className='h-full flex flex-col bg-white dark:bg-[#1e293b] border border-gray-100 dark:border-gray-700
-               rounded-xl overflow-hidden shadow-sm hover:shadow-lg dark:shadow-none dark:hover:shadow-md
-               transition-all duration-300 group hover:scale-105'>
-        {/* Image with Hover Description */}
-        <div className='relative h-48 overflow-hidden'>
-          <Image
-            src={image_url || "/default.jpg"}
-            alt={name}
-            fill
-            className='object-cover rounded-t-xl transform group-hover:scale-105'
-          />
-          <div
-            className='absolute inset-0 bg-black/70 dark:bg-black/80 text-white p-4 text-sm
-                      opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm overflow-y-auto'>
-            <p className='line-clamp-[8] overflow-hidden'>{description}</p>
-          </div>
-        </div>
+        className={`
+      relative w-full md:w-1/2 
+      h-60 md:h-auto 
+      md:aspect-[4/3] 
+      overflow-hidden rounded-t-3xl 
+      bg-gray-100 dark:bg-slate-800 
+      flex-shrink-0
+    `}>
+        <Image
+          src={image_url || "/default.jpg"}
+          alt={name}
+          fill
+          // On small devices use object-cover for full coverage, on md+ use object-contain
+          className='
+        object-cover md:object-contain
+        transition-transform duration-500 group-hover:scale-105
+      '
+          sizes='(max-width: 768px) 100vw, 50vw'
+          priority
+        />
+      </div>
 
-        {/* Content */}
-        <div className='p-5 flex flex-col flex-1 space-y-4'>
-          <h3 className='text-lg font-semibold text-gray-900 dark:text-slate-100'>
+      {/* Content Panel */}
+      <div className='relative z-10 w-full md:w-1/2 px-6 py-5 flex flex-col justify-between bg-gray-200 dark:bg-slate-900 overflow-hidden'>
+        {/* Header */}
+        <div>
+          <h3 className='text-xl font-semibold text-slate-800 dark:text-white mb-2 font-[cursive]'>
             {name}
           </h3>
+          <p className='text-sm text-gray-700 dark:text-gray-300 leading-snug line-clamp-3'>
+            {description}
+          </p>
+        </div>
 
-          {/* Technologies */}
-          <div className='flex flex-wrap gap-2 min-h-[60px] items-start'>
-            {technologies.map((tech, i) => (
-              <span
-                key={i}
-                className='inline-block bg-pink-100 text-pink-600 dark:bg-pink-900/30 dark:text-pink-300
-                       text-xs font-medium px-3 py-1 rounded-full'>
-                {tech}
-              </span>
-            ))}
-          </div>
+        {/* Tech Chips */}
+        <div className='flex flex-wrap gap-2 mt-3'>
+          {technologies.map((tech, i) => (
+            <span
+              key={i}
+              className='text-xs font-medium bg-gradient-to-br from-blue-400 to-blue-600 text-white px-2 py-0.5 rounded-full shadow-sm'>
+              {tech}
+            </span>
+          ))}
+        </div>
 
-          {/* Footer Links */}
-          <div className='mt-auto pt-2 flex flex-wrap gap-3'>
-            {live_link && (
-              <Link
-                href={live_link}
-                target='_blank'
-                className='inline-flex items-center text-sm text-blue-600 hover:text-blue-800
-                       dark:text-blue-400 dark:hover:text-blue-300 transition-colors'>
-                <FaLink className='mr-1' />
-                Live
-              </Link>
-            )}
-            {frontend_github_link && (
-              <Link
-                href={frontend_github_link}
-                target='_blank'
-                className='inline-flex items-center text-sm text-gray-600 hover:text-black
-                       dark:text-gray-300 dark:hover:text-white transition-colors'>
-                <FaGithub className='mr-1' />
-                Frontend
-              </Link>
-            )}
-            {backend_github_link && (
-              <Link
-                href={backend_github_link}
-                target='_blank'
-                className='inline-flex items-center text-sm text-gray-600 hover:text-black
-                       dark:text-gray-300 dark:hover:text-white transition-colors'>
-                <FaGithub className='mr-1' />
-                Backend
-              </Link>
-            )}
+        {/* Footer Links */}
+        <div className='flex flex-wrap gap-4 mt-4 border-t border-gray-100 dark:border-slate-700 pt-3 text-sm font-medium'>
+          {live_link && (
             <Link
-              href={`/project/${id}`}
-              className='inline-flex items-center text-sm text-gray-600 hover:text-black
-                     dark:text-gray-300 dark:hover:text-white transition-colors'>
-              <FaEye className='mr-1' />
-              Details
+              href={live_link}
+              target='_blank'
+              className='flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline'>
+              <HiOutlineExternalLink className='text-base' /> Live
             </Link>
-          </div>
+          )}
+          {frontend_github_link && (
+            <Link
+              href={frontend_github_link}
+              target='_blank'
+              className='flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:underline'>
+              <FaGithub className='text-base' /> Frontend
+            </Link>
+          )}
+          {backend_github_link && (
+            <Link
+              href={backend_github_link}
+              target='_blank'
+              className='flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:underline'>
+              <FaGithub className='text-base' /> Backend
+            </Link>
+          )}
+          <Link
+            href={`/project/${id}`}
+            className='flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:underline'>
+            <FaEye className='text-base' /> Details
+          </Link>
         </div>
       </div>
     </div>

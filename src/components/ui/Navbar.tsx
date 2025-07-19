@@ -76,11 +76,11 @@ const Navbar = () => {
       }`}>
       {/* Scroll Progress Bar */}
       <div
-        className='h-1 bg-gradient-to-r from-pink-500 to-rose-500 fixed top-0 left-0 z-[60] transition-all duration-200'
+        className='h-1 bg-gradient-to-r  from-pink-500 to-rose-500 fixed top-0 left-0 z-[60] transition-all duration-200'
         style={{ width: `${scrollProgress}%` }}
       />
 
-      <nav className='flex items-center justify-between px-4 md:px-16 py-4 relative'>
+      <nav className='flex items-center max-w-7xl m-auto justify-between px-4 md:px-16 py-4 relative'>
         {/* Logo */}
         <Link href='/'>
           <Image src={logo} width={80} height={50} alt='Abdullah Al Noman' />

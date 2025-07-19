@@ -1,159 +1,148 @@
 "use client";
-
-import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 import Headline from "../ui/Headline";
 
-// Label generator
-const getSkillLabel = (progress: number): string => {
-  if (progress >= 90) return "Expert";
-  if (progress >= 75) return "Advanced";
-  if (progress >= 50) return "Intermediate";
-  return "Beginner";
-};
-
-// Skill Data
+// Separated Skill Data
 const frontendSkills = [
-  { id: "f1", name: "Next.js", progress: 95 },
-  { id: "f2", name: "JavaScript", progress: 90 },
-  { id: "f3", name: "TypeScript", progress: 85 },
-  { id: "f4", name: "SHADCN UI", progress: 85 },
-  { id: "f5", name: "Tailwind CSS", progress: 80 },
-  { id: "f6", name: "React", progress: 70 },
-  { id: "f7", name: "Redux", progress: 70 },
+  {
+    id: "7",
+    name: "Next.js",
+    icon: "https://img.icons8.com/fluent-systems-filled/512/nextjs.png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
+  {
+    id: "4",
+    name: "TypeScript",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
+  {
+    id: "1",
+    name: "JavaScript",
+    icon: "https://banner2.cleanpng.com/20180605/yjb/aa9yal4pp.webp",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
+  {
+    id: "2",
+    name: "React JS",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
+
+  {
+    id: "10",
+    name: "Redux",
+    icon: "https://img.icons8.com/?size=512&id=jD-fJzVguBmw&format=png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
+
+  {
+    id: "12",
+    name: "Tailwind",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
 ];
 
 const backendSkills = [
-  { id: "b1", name: "Node.js", progress: 80 },
-  { id: "b2", name: "Express.js", progress: 75 },
-  { id: "b3", name: "N8N", progress: 70 },
-  { id: "b4", name: "PostgreSQL", progress: 65 },
-  { id: "b5", name: "NoSQL", progress: 65 },
-  { id: "b6", name: "AI", progress: 65 },
-  { id: "b7", name: "Prisma", progress: 65 },
+  {
+    id: "3",
+    name: "Node JS",
+    icon: "https://freepngimg.com/download/github/71302-express.js-chrome-javascript-system-node.js-v8-runtime.png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
+  {
+    id: "5",
+    name: "Express JS",
+    icon: "https://seekvectors.com/files/download/234b110fb32958f68f318e13c7a0610e.png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
+  {
+    id: "6",
+    name: "MongoDB",
+    icon: "https://images.icon-icons.com/2415/PNG/512/mongodb_plain_logo_icon_146422.png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
+  {
+    id: "8",
+    name: "PostgresQl",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
+  {
+    id: "11",
+    name: "GraphQl",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/500px-GraphQL_Logo.svg.png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
+  {
+    id: "12",
+    name: "Prisma",
+    icon: "https://www.freelogovectors.net/wp-content/uploads/2022/01/prisma_logo-freelogovectors.net_.png",
+    bgColor: "bg-gray-200 dark:bg-slate-800",
+  },
 ];
 
-// Skill bar component
-const SkillBar = ({
+// Skill card component
+const SkillCard = ({
   name,
-  progress,
-  animatedProgress,
+  icon,
+  bgColor,
   idx,
-  inView,
 }: {
   name: string;
-  progress: number;
-  animatedProgress: number;
+  icon: string;
+  bgColor: string;
   idx: number;
-  inView: boolean;
 }) => (
   <div
-    className={`transition-opacity duration-700 ${
-      inView ? "opacity-100 animate-fadeInUp" : "opacity-0"
-    }`}
-    style={{ animationDelay: `${idx * 150}ms` }}>
-    <div className='flex justify-between mb-1'>
-      <span className='font-medium text-gray-800 dark:text-gray-200'>
-        {name}
-      </span>
-      <span className='text-sm italic text-gray-600 dark:text-gray-400'>
-        {getSkillLabel(progress)}
-      </span>
-    </div>
-    <div className='w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 shadow-inner overflow-hidden'>
-      <div
-        className='h-4 bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-600 dark:to-blue-800 rounded-full transition-all duration-1000 ease-out'
-        style={{ width: `${animatedProgress}%` }}
+    className={`${bgColor} rounded-lg p-6 flex flex-col items-center justify-center text-center hover:scale-105 hover:shadow-lg transition hover:transition`}
+    data-aos='fade-up'
+    data-aos-delay={idx * 50}
+    data-aos-duration='600'>
+    {icon.startsWith("http") ? (
+      <Image
+        src={icon}
+        alt={name}
+        width={48}
+        height={48}
+        className='mb-3 object-contain w-12 h-12'
       />
-    </div>
-  </div>
-);
-
-// Section column component
-const SkillSection = ({
-  title,
-  skills,
-  animatedProgress,
-  inView,
-  titleColor,
-}: {
-  title: string;
-  skills: { id: string; name: string; progress: number }[];
-  animatedProgress: number[];
-  inView: boolean;
-  titleColor: string;
-}) => (
-  <div className='w-full md:w-1/2 px-2'>
-    <h3 className={`text-xl font-bold ${titleColor} mb-4`}>{title}</h3>
-    <div className='space-y-5'>
-      {skills.map((skill, idx) => (
-        <SkillBar
-          key={skill.id}
-          name={skill.name}
-          progress={skill.progress}
-          animatedProgress={animatedProgress[idx] ?? 0}
-          idx={idx}
-          inView={inView}
-        />
-      ))}
-    </div>
+    ) : (
+      <div className='text-4xl mb-3'>{icon}</div>
+    )}
+    <h3 className='text-blue-500 dark:text-slate-300 font-medium text-lg'>
+      {name}
+    </h3>
   </div>
 );
 
 // Main component
 const Skill = () => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
-
-  const [frontendProgress, setFrontendProgress] = useState<number[]>([]);
-  const [backendProgress, setBackendProgress] = useState<number[]>([]);
-
-  useEffect(() => {
-    if (inView) {
-      setFrontendProgress(frontendSkills.map((s) => s.progress));
-      setBackendProgress(backendSkills.map((s) => s.progress));
-    }
-  }, [inView]);
-
   return (
     <section
-      ref={ref}
-      className='max-w-6xl mx-auto px-6 py-12'
+      className='max-w-7xl mx-auto px-6 py-12'
       aria-label='Skills section'>
-      <Headline title='Skills' />
-
-      <div className=' flex flex-col md:flex-row md:space-x-6 space-y-12 md:space-y-0'>
-        <SkillSection
-          title='Frontend Skills'
-          skills={frontendSkills}
-          animatedProgress={frontendProgress}
-          inView={inView}
-          titleColor='text-pink-500'
-        />
-        <SkillSection
-          title='Backend Skills'
-          skills={backendSkills}
-          animatedProgress={backendProgress}
-          inView={inView}
-          titleColor='text-pink-500'
-        />
+      <Headline title='Some of My Skills' />
+      {/* Frontend Skills */}
+      <h2 className='text-xl font-semibold text-slate-700 dark:text-white mt-10 mb-4'>
+        Frontend
+      </h2>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6'>
+        {frontendSkills.map((skill, idx) => (
+          <SkillCard key={skill.id} {...skill} idx={idx} />
+        ))}
       </div>
 
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fadeInUp {
-          animation: fadeInUp 0.7s ease-out forwards;
-        }
-      `}</style>
+      {/* Backend Skills */}
+      <h2 className='text-xl font-semibold text-slate-700 dark:text-white mt-10 mb-4'>
+        Backend
+      </h2>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6'>
+        {backendSkills.map((skill, idx) => (
+          <SkillCard key={skill.id} {...skill} idx={idx} />
+        ))}
+      </div>
     </section>
   );
 };
