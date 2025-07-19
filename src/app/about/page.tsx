@@ -48,7 +48,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <section className='min-h-screen px-8 py-16 md:px-20 md:py-24 font-sans text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900'>
+    <section className='min-h-screen px-8 py-16 md:px-20 md:py-24 font-sans text-gray-900 dark:text-gray-100  dark:bg-gray-900'>
       <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start'>
         {/* Left side */}
         <div

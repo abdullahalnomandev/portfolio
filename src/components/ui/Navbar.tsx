@@ -72,7 +72,7 @@ const Navbar = () => {
       className={`transition-all duration-300 ${
         isFixed
           ? "md:sticky top-0 left-0 right-0 z-50 backdrop-blur bg-white/70 dark:bg-gray-900/70 shadow-md"
-          : "bg-[#f4f6ff] dark:bg-gray-900"
+          : "bg-[#f5f7ff] dark:bg-gray-900"
       }`}>
       {/* Scroll Progress Bar */}
       <div
