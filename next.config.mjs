@@ -11,6 +11,15 @@ const nextConfig = {
         hostname: "**",
       },
     ],
+    domains: [
+      'images.unsplash.com',
+      'picsum.photos',
+      'via.placeholder.com',
+      'res.cloudinary.com',
+      'imgur.com',
+      'i.imgur.com',
+      'media.giphy.com',
+    ],
   },
 };
 
